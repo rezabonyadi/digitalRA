@@ -21,19 +21,21 @@ With `digitalRA`, we aim to simplify the process of literature reviews. By lever
 
 List any required dependencies here.
 
-### Installation
-
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/your_username/digitalRA.git
-Navigate into the directory and install the necessary packages:
-cd digitalRA
-pip install -r requirements.txt
-```
-
 ### Usage
 
 For detailed instructions and examples, refer to the [User Guide](./docs/user_guide.md).
+
+## 🚀 Installation
+
+1. Clone this repo:
+```bash
+git clone https://github.com/your_username/digitalRA.git
+```
+2. Navigate into the directory and install the necessary packages:
+```bash
+cd digitalRA
+pip install -r requirements.txt
+```
 
 ## 🙌 Contributing
 

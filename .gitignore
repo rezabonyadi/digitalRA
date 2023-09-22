@@ -1,4 +1,5 @@
 env_digitalRA/
-results/
+results/*.*
 assets/*.exe
 .ipynb_checkpoints/
+output.json
