@@ -1,37 +1,50 @@
-# digitalRA: Your Digital Research Assistant
 # digitalRA 📖✨
-Your next-generation Digital Research Assistant.
+A Digital Research Assistant to Simplify Literature Reviews.
 
 ---
 
 ![DigitalRA Banner](path_to_your_banner_image.png)
 
-`digitalRA` is here to redefine your academic research experience. With the seamless fusion of cutting-edge machine learning and user-centric design, we bring literature reviews right to your fingertips.
+With `digitalRA`, we aim to simplify the process of literature reviews. By leveraging advanced machine learning techniques, we provide researchers a tool that can streamline the discovery of relevant papers, aiding in the comprehensive understanding of a given topic.
 
 ## 🔍 Features
 
-- **Search Extrapolation**: Transform a single research idea into a comprehensive list of search phrases.
-- **Multi-Platform Integration**: Dive into vast academic oceans such as PubMed, Semantic Scholar, and Google Scholar.
-- **Relevance At Its Best**: An intuitive scoring system that handpicks the most relevant papers tailored to your needs.
-- **Time-Sensitive Filtering**: Stay updated with the latest research while also cherishing highly-cited classics.
-- **Auto-Generated Reviews**: An articulate review generation system that puts together insights for you.
+- **Intelligent Search Queries**: Generate meaningful search phrases from a brief research idea or description.
+- **Search Across Platforms**: Integrated search across renowned platforms like PubMed, Semantic Scholar, and Google Scholar.
+- **Relevance Scoring**: Identify the most pertinent papers to your topic, ensuring a focused review.
+- **Filtering Mechanism**: Prioritize newer research and highlight impactful, highly-cited works.
+- **Review Generation**: Compile and summarize findings for an efficient literature review.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-List any prerequisites or dependencies required here.
+List any required dependencies here.
 
 ### Installation
 
 1. Clone this repo:
-   bash
+   ```bash
    git clone https://github.com/your_username/digitalRA.git
-
+Navigate into the directory and install the necessary packages:
 cd digitalRA
 pip install -r requirements.txt
+```
 
-Usage
-Detailed instructions and examples can be found in the User Guide.
+### Usage
 
-# 🙌 Contributing
+For detailed instructions and examples, refer to the [User Guide](./docs/user_guide.md).
+
+## 🙌 Contributing
+
+We value community contributions! For guidelines, check our [Contributing Guidelines](./CONTRIBUTING.md).
+
+## 📜 License
+
+This project operates under the MIT License. View details in [LICENSE.md](./LICENSE.md).
+
+## 💌 Contact & Support
+
+Got questions or suggestions? Use the [Issues Tab](https://github.com/your_username/digitalRA/issues) or contact us at [support@digitalra.com](mailto:support@digitalra.com).
+
+Ease your research journey with `digitalRA`.
