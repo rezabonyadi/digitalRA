@@ -1,0 +1,4 @@
+env_digitalRA/
+results/
+assets/*.exe
+.ipynb_checkpoints/
