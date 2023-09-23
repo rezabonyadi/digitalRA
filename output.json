@@ -1,10 +1,377 @@
 ﻿[
 	{
-		"uid": "S2:f323c630e060317f224dfdee8d2c3dabb42b7e94",
-		"title": "Only Bayes should learn a manifold",
-		"abstract": "We investigate learning of the differential geometric structure of a data manifold embedded in a high-dimensional Euclidean space. We first analyze kernel-based algorithms and show that under the usual regularizations, non-probabilistic methods cannot recover the differential geometric structure, but instead find mostly linear manifolds or spaces equipped with teleports. We repeat the analysis for probabilistic methods and show that they naturally recover the geometric structure. Fully exploiting this structure, however, requires the development of stochastic extensions to classic Riemannian geometry. We take early steps in that regard. Finally, we partly extend the analysis to models based on neural networks, thereby highlighting geometric and probabilistic shortcomings of current deep generative models. Comments on this document are gratefully accepted at sohau@dtu.dk. This is the 2 revision. 1 Motivation and background Manifold learning aim to learn a low-dimensional representation of data that reflect the intrinsic structure of data. Spectral methods seek a low-dimensional embedding of high-dimensional data that preserve certain aspects of the data. This includes methods such as Isomap [35], Locally linear embeddings [29], Laplacian eigenmaps [2] and more [32, 9]. Probabilistic methods often view the data manifold as governed by a latent variable along with a generative model that describe how the latent manifold is to be embedded in the data space. The common theme is the quest for a low-dimensional representation that faithfully capture the data. Ideally, we want an operational representation, i.e. we want to be able to make mathematically meaningful calculations with respect to the learned representation. For quantitative data analysis in the learned representation, a reasonable set of supported “operations” at least include: • Interpolation: given two points, a natural unique interpolating curve that follow the manifold should exist. • Distances: the distance between two points should be well-defined and reflect the amount of energy required to transform one point to another. • Measure: the representation should be equipped with a measure under which integration is well-defined for all points on the manifold. Depending on which analysis is to be performed in the new representation, one may focus on different operations. Even if the above operations should be considered elementary, most manifold learning schemes do not support any of these. Embedding methods seek a low-dimensional embedding z1:N = {z1, . . . , zN} of the data x1:N . These methods fundamentally only describe the data manifold at the points where data is observed Preprint. Work in progress. Figure 1: Reparametrizations illustrated. The left panel shows a “swirling” transformation of Z with the property that a Gaussian variable with zero mean and unit covariance, will have the same distribution after a reparametrization. The right panel shows pair-wise distances between points before and after reparametrization; evidently the geometry of Z is sensitive to reparametrizations. and nowhere else. As such, the low-dimensional embedding space is only well-defined at z1:N . It is common to treat the low-dimensional embedding space as being Euclidean, but this is generally a post hoc assumption with limited grounding in the embedding method. Fundamentally, the learned representation space is a discrete space that does not lend itself to continuous interpolations. Likewise, the most natural measure will only assign mass to the points z1:N , and any associated distribution will be discrete. This is too limited to be considered an operational representation. Generative models estimate a set of low-dimensional latent variables z1:N along with a suitable mapping f : Z → X such that f(z) ≈ x. It is, again, common to treat the latent space Z as being Euclidean. However, this assumption easily lead to arbitrariness. As an example, consider the variational autoencoder (VAE) [17, 27], which seek a representation in which z1:N follow a unit Gaussian distribution. Now consider the transformation g(z) = Rθz, (1.1) where Rθ is a linear transformation that rotate points by θ(z) = sin(π‖z‖). This is a smooth invertible transformation with the property that z ∼ N (0, I) ⇒ g(z) ∼ N (0, I). (1.2) Figure 1 illustrate this transformation. If the latent variables z1:N and the generator f is an optimal VAE, then g(z1:N ) and f ◦ g−1 is equally optimal. Yet, the latent spaces Z and g(Z) are quite different; Fig. 1 shows the Euclidean distances between zn and g(zn) for samples drawn from a unit Gaussian. Clearly, the transformed latent space is significantly different from the original space. As the VAE provides no guarantees as to which latent space is recovered, we must be careful when relying on the Euclidean latent space: distances between points are effectively arbitrary and as are straight-line interpolations. Any analysis relying on vector operations in the latent space are, thus, arbitrary and positive result should be viewed either as pure luck with little mathematical grounding, or due to unspecified aspects of the model. Ideally, we want a representation space that is invariant to such transformations, but current models do not deliver. In this paper, we consider models where the representation space Z is learned jointly with a smooth mapping f : Z → X , such that Z is naturally endowed with a Riemannian metric (Sec. 2). This gives well-defined interpolants, distances and a natural measure. We contribute a detailed analysis of the case where f is estimated by a kernel method (Sec. 3), and show that even in the case of infinite noise-free data a non-probabilistic estimate of f cannot recover the true Riemannian structure of Z . In contrast, we show that probabilistic estimates of f can recover the true Riemannian structure (Sec. 3.2). Fully exploiting this structure, however, require the development of Bayesian extensions to classic differential geometry (Sec. 4); we contribute elementary results in that regard, but many questions remain open. Finally, we partly extend our analysis to the case where f is a neural network and demonstrate that current deep generative models are lacking elementary properties before they can learn the Riemannian structure of data manifolds (Sec. 5). Our key finding is that uncertainty quantification is a prerequisite for learning an operational representation as the usual smoothness regularization introduce a harmful bias. Notation. We let Z denote the d-dimensional representation or latent space, which is learned from data in the observation space X ≡ R. Topologically, the latent space Z is assumed to be Euclidean. Latent points are denoted zn ∈ Z , while corresponding observations are xn ∈ X . The mapping f : Z → X embeds Z in X ; we denoteM = f(Z) and assume thatM is a Riemannian manifold.",
+		"uid": "S2:5f7d796e31d790676ac0389f6fb707b985f8b2af",
+		"title": "Extending Evidence for Inter-Individual Differences in Social Comparison Orientation to Pay Fairness Evaluations",
+		"doi": "10.1177/0033294119849018",
+		"abstract": "This research extends the limited support for social comparison tendencies as an individual difference variable and a key moderator of pay fairness perceptions. Through three studies comprised of five data collections, the following adapts a measure of social comparison orientation to pay contexts and examines its association with heightened perceptions of distributive fairness in hypothetical and actual scenarios of pay equity, over-reward, and under-reward. In keeping with Gibbons and Buunk’s construal, our targeted operationalization of social comparison orientation demonstrated inter-individual variation and intra-individual stability, providing corroboration of distinct individual predispositions towards social comparison. Our experimental findings further support this point in that socially relative pay information had a stronger impact on pay fairness evaluations among individuals predisposed to socially compare and a relatively weak impact on those that were not. This investigation is complementary but distinct from the prevalent focus on situational factors as drivers of social comparison. Further, examining this point in the context of pay is timely based on the recent level of public and managerial attention given to the fairness of relative pay differences.",
 		"rank": 1,
+		"year": 2020,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 1,
+		"ecc": 1,
+		"use": 1,
+		"authors": [
+			"K. Merriman",
+			"Atthaphon Mumi",
+			"L. Turner"
+		]
+	},
+	{
+		"uid": "S2:b5241545f9a51d7a7acff009e41e34ff7af108c4",
+		"title": "A Systematic Review of Individual Differences in Perception, Action, and Decision Making: Implications for Dance Education",
+		"doi": "10.12678/1089-313X.061522d",
+		"abstract": "This systematic bibliometric review summarizes recent neurocognitive research highlighting inter-individual differences in perception, action, and decision making that may have implications for dance education. First, the relevance of individual differences in cognitive functioning for dance education is illustrated by describing how a persons preferred reliance on certain perceptual motor, or (meta) cognitive skills may be exploited in dance training. Subsequently, we describe the findings of a literature search conducted to identify cognitive neuroscientific publications between 2010 and 2021 that highlight individual differences in cognitive functions that were also found to be supported by structural or functional-connectivity differences in the central nervous system. To cluster the findings of the literature search, we propose a simplified, six-category information processing model. Finally, for each model category, we summarize recent representative findings on salient individual differences and tentatively formulate testable implications for dance education practice with regard to pedagogical and curricula adaptations. Finally, the review also delineates an agenda for lines of research of which the results hopefully will assist dance instructors in the future.",
+		"rank": 2,
+		"year": 2022,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 0,
+		"ecc": 0,
+		"use": 1,
+		"authors": [
+			"Derrick D Brown",
+			"R. Meulenbroek"
+		]
+	},
+	{
+		"uid": "S2:b6a9dca02c121f90397096262df983aead03a7c5",
+		"title": "Inter-Individual Differences in Ornamental Colouration in a Mediterranean Lizard in Relation to Altitude, Season, Sex, Age, and Body Traits",
+		"doi": "10.3390/D13040158",
+		"abstract": "Animals frequently show complex colour patterns involved in social communication, which attracts great interest in evolutionary and behavioural ecology. Most researchers interpret that each colour in animals with multiple patches may either signal a different bearer’s trait or redundantly convey the same information. Colour signals, moreover, may vary geographically and according to bearer qualities. In this study, we analyse different sources of colour variation in the eastern clade of the lizard Psammodromus algirus. Sexual dichromatism markedly differs between clades; both possess lateral blue eyespots, but whereas males in the western populations display strikingly colourful orange-red throats during the breeding season, eastern lizards only show some commissure pigmentation and light yellow throats. We analyse how different colour traits (commissure and throat colouration, and the number of blue eyespots) vary according to body size, head size (an indicator of fighting ability), and sex along an elevational gradient. Our findings show that blue eyespots function independently from colour patches in the commissure and throat, which were interrelated. Males had more eyespots and orange commissures (which were yellow or colourless in females). Throat colour saturation and the presence of coloured commissures increased in older lizards. The number of eyespots, presence of a coloured commissure, and throat colour saturation positively related to head size. However, while the number of eyespots was maximal at lowlands, throat colour saturation increased with altitude. Overall, our results suggest that this lizard harbours several colour signals, which altitudinally differ in their importance, but generally provide redundant information. The relevance of each signal may depend on the context. For example, all signals indicate head size, but commissure colouration may work well at a short distance and when the lizard opens the mouth, while both throat and eyespots might work better at long distance. Meanwhile, throat colouration and eyespots probably work better in different light conditions, which might explain the altitudinal variation in the relative importance of each colour component.",
+		"rank": 3,
+		"year": 2021,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 6,
+		"ecc": 6,
+		"use": 1,
+		"authors": [
+			"G. Moreno-Rueda",
+			"Senda Reguera",
+			"F. J. Zamora‐Camacho",
+			"M. Comas"
+		]
+	},
+	{
+		"uid": "S2:c0df2b750a76decd8b2e24801e13ea6be1435e4a",
+		"title": "Individual dynamics of delta-beta coupling: using a multilevel framework to examine inter- and intraindividual differences in relation to social anxiety and behavioral inhibition.",
+		"doi": "10.1111/jcpp.13319",
+		"abstract": "BACKGROUND\nVariation in EEG-derived delta-beta coupling has recently emerged as a potential neural marker of emotion regulation, providing a novel and noninvasive method for assessing a risk factor for anxiety. However, our understanding of delta-beta coupling has been limited to group-level comparisons, which provide limited information about an individual's neural dynamics.\n\n\nMETHODS\nThe present study used multilevel modeling to map second-by-second coupling patterns between delta and beta power. Specifically, we examined how inter- and intraindividual delta-beta coupling patterns changed as a function of social anxiety symptoms and temperamental behavioral inhibition (BI).\n\n\nRESULTS\nWe found that stronger inter- and intraindividual delta-beta coupling were both associated with social anxiety. In contrast, the high-BI group showed weaker coupling relative to the non-BI group, a pattern that did not emerge when analyzing continuous scores of BI.\n\n\nCONCLUSIONS\nIn characterizing inter- and intraindividual coupling across the sample, we illustrate the utility of examining neural processes across levels of analysis in relation to psychopathology to create multilevel assessments of functioning and risk.",
+		"rank": 4,
+		"year": 2020,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 11,
+		"ecc": 11,
+		"use": 1,
+		"authors": [
+			"B. Anaya",
+			"Alicia Vallorani",
+			"Koraly Pérez-Edgar"
+		]
+	},
+	{
+		"uid": "S2:b560c9ae16a5829e87a5d40f9a00acd8c62dec43",
+		"title": "Perception of mineral character in Sauvignon blanc wine: inter-individual differences",
+		"doi": "10.4081/WS.2014.4474",
+		"abstract": "Of the descriptors employed to characterize wine organoleptically, minerality is arguably one of the most enigmatic. The aim of the work described in this article was to delineate the nature of perceived minerality in Sauvignon wine, specifically its sensorial reality for experienced wine professionals from France and New Zealand. Participants evaluated 16 Sauvignon blanc wines (8 French; 8 New Zealand) under three conditions, ortho-nasal olfaction, palate only (Nose-clip condition), and by full tasting (global perception). Data from the global condition only are reported here. Key results include: i) that although there were quantitative differences in perception of minerality as a function of culture, there was substantial agreement conceptually between French and New Zealand participants in terms of the sensorial experience of minerality; and ii) that perceived minerality associated significantly with other key wine descriptors, notably presence of citrus, stone-related characters (e.g., flinty or chalky/calcareous notes), and reductive notes, along with absence of Sauvignon varietal characteristics (passion fruit; green notes). Of particular interest, no significant, direct association was found between perceived sourness/acidity and minerality judgments for either culture.",
+		"rank": 5,
+		"year": 2014,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 1,
+		"ecc": 1,
+		"use": 1,
+		"authors": [
+			"W. Parr",
+			"Jordi Ballester",
+			"D. Peyron",
+			"C. Grose",
+			"D. Valentin"
+		]
+	},
+	{
+		"uid": "S2:89ab17089f07dab841a6443e48f2cd16bbc0b509",
+		"title": "A proxy measure of striatal dopamine predicts individual differences in temporal precision",
+		"doi": "10.3758/s13423-022-02077-1",
+		"rank": 6,
+		"year": 2022,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 1,
+		"ecc": 1,
+		"use": 1,
+		"authors": [
+			"Renata Sadibolova",
+			"Luna Monaldi",
+			"D. Terhune"
+		]
+	},
+	{
+		"uid": "S2:486db8d291f1d04181963b258d7bed76fe1626f5",
+		"title": "Individual Differences in Mentalizing Tendencies",
+		"doi": "10.1525/collabra.37602",
+		"abstract": "The human capacity to represent others and oneself in terms of internal mental states—mentalizing—varies across individuals. In this paper, we assess the extent to which commonly used mentalizing measures successfully capture meaningful individual differences in mentalizing tendencies and explore how these tendencies relate to broader variability in cognitive and social functioning. To this end, we administered a battery of behavioral and self-report measures of mentalizing, fluid intelligence, personality dimensions, sense of self, cognitive tendencies, and psychopathology symptoms in an online study (N=150). In a series of preregistered analyses, we found that fluid intelligence scores were most predictive of mentalizing variability while dimensions such as psychopathy, empathy and sense of power were also significantly associated with this variability (though to a lesser extent than fluid intelligence). Of the psychopathology symptoms assessed, somatization and self-harm were most strongly associated with inter-individual variability in mentalizing and uncertainty about mental states was the mentalizing dimension most tightly correlated to psychopathology symptoms. Our findings point to the need for more research to explore ways in which mentalizing tendencies are tied to other domains, such as general cognitive functioning and psychopathology. Additionally, our findings highlight the potential for merging clinical assessment tools with social cognition research.",
+		"rank": 7,
+		"year": 2022,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 1,
+		"ecc": 1,
+		"use": 1,
+		"authors": [
+			"Netanel Weinstein",
+			"L. Whitmore",
+			"K. Mills"
+		]
+	},
+	{
+		"uid": "S2:41c42a6bd4571bfff6e93fb1f56a013c0fb4c5c3",
+		"title": "Individual differences in the vicarious perception of pain",
+		"abstract": "Vicarious pain refers to the processes and experiences that arise from observations of other people in pain. Due to the interpersonal and multi-modal nature of these processes, research into the field is highly relevant for a number of key concepts in social cognitive neuroscience, such as empathy, multi-sensory processing and social cognition. The dominant approach in the field has been to focus on normative samples with little focus being given to inter-individual differences. The discovery of a subsample of the population who report conscious experiences of pain when observing it, so called ‘mirror-pain responders’, presents a significant opportunity for developing our understanding of the neural processes and characteristics associated with vicarious pain. The present thesis aims to extend understanding of this group who appear to lie on an extreme end of a spectrum of vicarious pain perception. Although past research has highlighted this group and made some attempts to identify their prevalence, few formal attempts have been made to stringently discover the prevalence and identify the characteristics of their qualitative experience. As such, ARTICLE I developed a questionnaire, named the Vicarious Pain Questionnaire (VPQ), which characterises mirror-pain responders based on their subjective experiences of pain. The results showed a surprisingly high prevalence rate for the condition, ~30%. In addition through the use of a cluster analysis, the VPQ identified subgroups within mirror-pain responders, which included a group who experienced sensory and localised mirror-pain, and a group that experienced affective and generalised mirror-pain. ARTICLE I and ARTICLE II both aimed at assessing the neural basis for the experiences and successfully highlighted the role of hyperactivity in vicarious somatosensory processing, through the use of electrophysiological (EEG) neuro-markers for somatosensory processing (mu rhythm) and functional magnetic resonance imaging (fMRI) activation in the somatosensory cortex during pain observation. Additionally, these articles highlighted the role of self-other processing regions through the use of voxel-based morphometry (VBM) which revealed reduced grey-matter volume in the right temporo-parietal junction (rTPJ), and psycho-physiological interactions (PPI) of fMRI processing which revealed connectivity networks between pain matrix regions and self-other processing regions (rTPJ and dorsomedial prefrontal cortex (DMPFC)). \n \nCharacteristics of the mirror-pain were further assessed in ARTICLE III which in a battery of behavioural and physiological tests were administered to mirror-pain responders and controls. This study showed abnormal autonomic nervous system processing for Affective/General mirror-pain responders and confirmed the link between the condition and questionnaire measures of empathy. Finally, ARTICLE IV failed to provide a causal link between self-other processing regions (rTPJ) and somatosensory activation in response to pain observations through the use of theta-burst transcranial magnetic stimulation (TMS) in non-responders. This calls into question the direct causality of neural mechanisms associated with self-other theories of mirror-pain. This thesis demonstrates the importance of studying inter-individual differences in vicarious pain by reporting a set questionnaire and neuroimaging results which contribute to debates in the field and raises questions for future research. This work, its implications, and contributions to the wider literature are reviewed in the DISCUSSION chapter.",
+		"rank": 8,
+		"year": 2018,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 1,
+		"ecc": 1,
+		"use": 1,
+		"authors": [
+			"Thomas Grice-Jackson"
+		]
+	},
+	{
+		"uid": "S2:9288a8bde611466f84b73aa0394a2561e9697bf5",
+		"title": "Inter-individual differences in time perception: Gene–brain-psychological function",
+		"doi": "10.1016/J.IJPSYCHO.2008.05.507",
+		"rank": 9,
+		"year": 2008,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 0,
+		"ecc": 0,
+		"use": 1,
+		"authors": [
+			"O. Sysoeva",
+			"G. Portnova",
+			"N. Maluchenko",
+			"A. Tonevitsky",
+			"Alexey Ivanitsky"
+		]
+	},
+	{
+		"uid": "S2:4202a5bbf76d0d7426c678e53c1b5943a8a58c3a",
+		"title": "Otolith signals contribute to inter-individual differences in the perception of gravity-centered space",
+		"doi": "10.1007/s00221-013-3816-6",
+		"rank": 10,
+		"year": 2014,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 4,
+		"ecc": 4,
+		"use": 1,
+		"authors": [
+			"C. Cian",
+			"P. Barraud",
+			"A. Paillard",
+			"S. Hidot",
+			"P. Denise",
+			"J. Ventre-Dominey"
+		]
+	},
+	{
+		"uid": "S2:02521289a02cdefb4850124a85a9b36812a67a25",
+		"title": "Characteristics associated with inter-individual variability in financial distress in patients with breast cancer prior to and for 12 months following surgery",
+		"doi": "10.1007/s00520-021-06524-y",
+		"rank": 11,
+		"year": 2021,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 3,
+		"ecc": 3,
+		"use": 1,
+		"authors": [
+			"R. Chan",
+			"B. Cooper",
+			"B. Koczwara",
+			"A. Chan",
+			"Chia Jie Tan",
+			"L. Gordon",
+			"S. Paul",
+			"L. Dunn",
+			"Y. Conley",
+			"K. Kober",
+			"G. Abrams",
+			"J. Levine",
+			"C. Miaskowski"
+		]
+	},
+	{
+		"uid": "S2:e6a04268e0c0ae0637b6b7b0ff2711d16353fc86",
+		"title": "Otolith signals contribute to inter-individual differences in the perception of gravity-centered space",
+		"doi": "10.1007/s00221-013-3816-6",
+		"rank": 12,
+		"year": 2014,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 0,
+		"ecc": 0,
+		"use": 1,
+		"authors": [
+			"C. Cian",
+			"P. Barraud",
+			"A. Paillard",
+			"S. Hidot",
+			"P. Denise",
+			"J. Ventre-Dominey"
+		]
+	},
+	{
+		"uid": "S2:a78b15d955cf3023f543b4de17602749cf35c97f",
+		"title": "Individual Differences in Temporal Perception and Their Implications for Everyday Listening",
+		"doi": "10.1007/978-3-319-47944-6_7",
+		"rank": 13,
+		"year": 2017,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 20,
+		"ecc": 20,
+		"use": 1,
+		"authors": [
+			"B. Shinn-Cunningham",
+			"Lenny A. Varghese",
+			"Le Wang",
+			"Hari M. Bharadwaj"
+		]
+	},
+	{
+		"uid": "S2:391368ff531f931085195833532c64c0e43da551",
+		"title": "Individual Differences in Speech Production and Perception",
+		"doi": "10.3726/978-3-653-05777-5",
+		"abstract": "Inter-individual variation in speech is a topic of increasing interest both in human sciences and speech technology. It can yield important insights into biological, cognitive, communicative, and social aspects of language. Written by specialists in psycholinguistics, phonetics, speech development, speech perception and speech technology, this volume presents experimental and modeling studies that provide the reader with a deep understanding of interspeaker variability and its role in speech processing, speech development, and interspeaker interactions. It discusses how theoretical models take into account individual behavior, explains why interspeaker variability enriches speech communication, and summarizes the limitations of the use of speaker information in forensics.",
+		"rank": 14,
+		"year": 2015,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 13,
+		"ecc": 13,
+		"use": 1,
+		"authors": [
+			"Susanne Fuchs",
+			"D. Pape",
+			"Caterina Petrone",
+			"P. Perrier"
+		]
+	},
+	{
+		"uid": "S2:1ecad9230a7fa91b2d2caf6a8b6fe9989ca05e56",
+		"title": "Social modulation of individual differences in dance communication in honey bees",
+		"doi": "10.1007/s00265-019-2649-0",
+		"rank": 15,
 		"year": 2019,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 20,
+		"ecc": 20,
+		"use": 1,
+		"authors": [
+			"E. A. George",
+			"A. Brockmann"
+		]
+	},
+	{
+		"uid": "S2:44aae8c30943d72c5c6ecea63ae2a1ed83cac9ae",
+		"title": "Individual differences in human voice pitch are preserved from speech to screams, roars and pain cries",
+		"doi": "10.1098/rsos.191642",
+		"abstract": "Fundamental frequency (F0, perceived as voice pitch) predicts sex and age, hormonal status, mating success and a range of social traits, and thus functions as an important biosocial marker in modal speech. Yet, the role of F0 in human nonverbal vocalizations remains unclear, and given considerable variability in F0 across call types, it is not known whether F0 cues to vocalizer attributes are shared across speech and nonverbal vocalizations. Here, using a corpus of vocal sounds from 51 men and women, we examined whether individual differences in F0 are retained across neutral speech, valenced speech and nonverbal vocalizations (screams, roars and pain cries). Acoustic analyses revealed substantial variability in F0 across vocal types, with mean F0 increasing as much as 10-fold in screams compared to speech in the same individual. Despite these extreme pitch differences, sexual dimorphism was preserved within call types and, critically, inter-individual differences in F0 correlated across vocal types (r = 0.36–0.80) with stronger relationships between vocal types of the same valence (e.g. 38% of the variance in roar F0 was predicted by aggressive speech F0). Our results indicate that biologically and socially relevant indexical cues in the human voice are preserved in simulated valenced speech and vocalizations, including vocalizations characterized by extreme F0 modulation, suggesting that voice pitch may function as a reliable individual and biosocial marker across disparate communication contexts.",
+		"rank": 16,
+		"year": 2020,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 22,
+		"ecc": 22,
+		"use": 1,
+		"authors": [
+			"K. Pisanski",
+			"J. Raine",
+			"D. Reby"
+		]
+	},
+	{
+		"uid": "S2:7c3810ca6ae4eaf51f174823f66b5e44689ebd53",
+		"title": "Social modulation of individual differences in dance communication in honey bees",
+		"doi": "10.1007/s00265-019-2649-0",
+		"rank": 17,
+		"year": 2019,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 2,
+		"ecc": 2,
+		"use": 1,
+		"authors": [
+			"E. A. George",
+			"A. Brockmann"
+		]
+	},
+	{
+		"uid": "S2:dd378fb884ee92070a90eb05a52ed64795fcbffb",
+		"title": "The structural basis of inter-individual differences in human behaviour and cognition",
+		"doi": "10.1038/nrn3000",
+		"rank": 18,
+		"year": 2011,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 941,
+		"ecc": 941,
+		"use": 1,
+		"authors": [
+			"R. Kanai",
+			"G. Rees"
+		]
+	},
+	{
+		"uid": "S2:bb359649429250aa0926a29175537d1592daa30b",
+		"title": "Inter-individual predictors of pain inhibition during performance of a competing cognitive task",
+		"doi": "10.1038/s41598-020-78653-z",
+		"rank": 19,
+		"year": 2020,
 		"volume": 0,
 		"issue": 0,
 		"startpage": 0,
@@ -13,55 +380,34 @@
 		"ecc": 10,
 		"use": 1,
 		"authors": [
-			"Søren Hauberg"
+			"V. Tabry",
+			"T. Vogel",
+			"M. Lussier",
+			"P. Brouillard",
+			"J. Buhle",
+			"P. Rainville",
+			"L. Bherer",
+			"M. Roy"
 		]
 	},
 	{
-		"uid": "S2:32a4028f4c964a45e65c6d014dc18b784d10346e",
-		"title": "on Harmonic Analysis and Operator Theory",
-		"abstract": "We give a canonical factorization of monic quadratic operator pencils with accretive coeﬃcient operators acting on Hilbert space. Under some conditions this factor generates s holomorphic C 0 -semigroup of contraction operators. The results carry over to the case of pencils of unbounded operators and are used to prove the existence and uniqueness of solutions of an abstract second order diﬀerential equation. We also investigate some necessary and suﬃcient conditions to ensure the separation of spectral values between the spectra of this factors, in the case of bounded Hilbert space operators. As an application a ﬁnite-dimensional case is also discussed. of Fourier algebras and local synthesis of the anti-diagonal, Adv. Math. 292 (2016), 11–41. We construct a Krein space, a J -representation and a projective J -unitary representation associated with a unital projective J -covariant completely positive linear map. We ﬁnd a Krein space representation for a unital projective ( θ, u )-covariant α -completely positive linear map. For a given projective unital ( θ, u )-covariant α -completely positive linear We study harmonic Besov spaces b pα on the unit ball of R n , where 0 < p < 1 and α ∈ R . We provide characterizations in terms of partial and radial derivatives and certain radial diﬀerential operators that are more compatible with reproducing kernels of harmonic Bergman-Besov spaces. Thus we complete the picture about the interchangeability of various kinds of derivatives in deﬁning the two-parameter harmonic Besov space family for the full range of parameters. We show that the dual of harmonic Besov space b pα is weighted Bloch space b ∞ β under certain volume integral pairing for 0 < p < 1 and α, β ∈ R . Our other results are about growth at the boundary and atomic decomposition. Let A be a Banach algebra and ∆( A ) be a space of all characters (nonzero, complex, multiplicative linear functionals). For a character ϕ ∈ ∆( A ), a Banach space X is called Banach ( A , ϕ )-module and denoted by X ϕ whenever the module actions are deﬁned by a · x = x · a = ϕ ( a ) x for a ∈ A and x ∈ X . We are interested in studying the ﬁrst and second cohomology groups of A with coeﬃcients in X ϕ . We show that H 1 ( A , X ϕ ) = 0 and H 2 ( A , X ϕ ) is a Hausdorﬀ space (Banach space) for all ϕ ∈ ∆( A ). We apply our results to some Banach algebras related to locally compact groups. In a special case we conclude that there is no nonzero point derivations on this class of Banach algebras. The aim of this talk is to give a characterization of the closure of Dirichlet type spaces on the unit disk in the Bloch space. Our characterizations involve high order derivatives and embedding derivatives of Bloch type functions into Lebesgue spaces. As an application of this characterization we provide further information on the interpolating Blaschke products in the closure of Dirichlet type spaces in the Bloch space. The results presented in the talk are published recently in [2] and followed up and generalized by the work in [1]. We associate to an operator valued completely positive map ϕ on a C ∗ -algebra A and a Hilbert C ∗ -module X over A a subset X ϕ of X, called ‘ ternary domain ’ of ϕ on X , and we show that X ϕ is a Hilbert C ∗ -module over the multiplicative domain of ϕ and every ϕ -map (i.e., associated quaternary map with ϕ ) acts on it as a ternary map. We introduce the notion of ternary domain for an operator valued completely positive map on a C ∗ -algebra and show that T ϕ , the ternary domain of ϕ , is a closed two-sided ∗ -ideal of the multiplicative domain of ϕ . Also, we show that XT ϕ = X ϕ and we give several characterizations of X ϕ . Furthermore, we establish some relationships between X ϕ and minimal Stinespring dilation triples associate to ϕ . Finally, we show that every operator valued completely positive linear map ϕ on a C ∗ -algebra A induces a unique (in a some sense) completely positive linear map on the linking algebra of X and we determine its multiplicative domain in terms of the multiplicative domain of ϕ and the ternary domain of ϕ on X . In an attempt to identify the harmonic Drury-Arveson space, we introduce and investigate large families of reproducing kernel Hilbert spaces of harmonic functions the unit ball of R n . Using zonal harmonics, we deﬁne and develop basic properties of shift operators and their adjoints in the harmonic setting. We prove a dilation result for the shift operators on harmonic spaces that are row contractions. As a consequence, we show that the norm of one of our spaces ˘ G is maximal among those spaces on which the shift operator is a row contraction. We then describe the progress towards a von Neumann inequality for harmonic polynomials and a tuple of commuting operators on harmonic spaces that are row contractions and belong to a certain class showing the maximality of the operator norm of the shift on ˘ G . C n . Extremal and for the family S 0 A ( B n ) of univalent mappings with A parametric representation on B n where A ∈ L ( C n ) with k + A ) 2 m A ). we present recent results on approximation properties of various families of normalized univalent mappings f on B n , with Runge image, by automorphisms of C n whose restrictions to B n have the same geometric property as the initial mappings f . Open problems and questions will be We obtain well-posedness results in L p -based weighted Sobolev spaces for transmission and exterior boundary problems for the Stokes system with L ∞ strongly elliptic coeﬃcient tensor in bounded and exterior Lipschitz domains of R n , n ≥ 3. We explore a variational approach that reduces two linear transmission problems for the Stokes system to equivalent mixed variational formulations with data in L p -based weighted Sobolev and Besov spaces. We show that such a mixed variational formulation is well-posed in the space H 1 ,p ( R n ) n × L p ( R n ), n ≥ 3, for any p in an open interval containing 2. These results are used to deﬁne the Newtonian and layer potential operators for the considered Stokes system. Various mapping properties of these operators are also obtained. Well-posedness and regularity results of the exterior Dirichlet and mixed problems for the Stokes system with L ∞ elliptic coeﬃcient tensor in an exterior Lipschitz domain Ω − of R n , n ≥ 3, and in L p -based weighted Sobolev spaces H 1 ,p (Ω − ) n × L p (Ω − ). For p = 2, the solution is obtained in terms of Newtonian and layer potentials. This talk discusses a new and uniﬁed approach to three main distinct themes in harmonic analysis. Given a complex, separable Hilbert space H , we characterize those operators for which (cid:107) P T ( I − P ) (cid:107) = (cid:107) ( I − P ) T P (cid:107) for all orthogonal projections P on H . When H is ﬁnite-dimensional, we also obtain a complete characterization of those operators for which rank ( I − P ) T P = rank P T ( I − P ) for all orthogonal projections P . When H is inﬁnite-dimensional, we show that any operator with the latter property is normal, and its spectrum is contained in either a line or a circle in the complex plane. The positive deﬁnite cone of a C ∗ -algebra is an important and rich structure both from the algebraic and the geometrical points of view. In this talk we present an overview of results describing the related symmetries which are diﬀerent sorts of isomorphisms or isometries or, even more generally, preservers of generalized distance measures on positive deﬁnite cones in operator algebras. Open problems will also be discussed. The goal of the talk is to describe some of the aspects of the “helicoidal method” that we developed with Cristina Benea over the last few years. One particular more recent consequence of it, that we could discuss more in detail, is the natural extension of the classical Coifman-Meyer theorem, to the setting of multiple vector valued and mixed norm estimates, that play an important role in non-linear PDE. deﬁnes a bounded bilinear operator from L Φ 1 ( R ) × L Φ 2 ( R ) to L Φ 3 ( R ). We denote by BM (Φ 1 , Φ 2 , Φ 3 ) ( R ) the space of all bilinear multipliers of type (Φ 1 , Φ 2 , Φ 3 ) and investigate properties of such a class. Under some conditions on the triple (Φ 1 , Φ 2 , Φ 3 ) we give examples of bilinear multipliers of type (Φ 1 , Φ 2 , Φ 3 ). We focus on the case m ( ξ, η ) = M ( ξ − η ) and obtain necessary conditions on (Φ 1 , Φ 2 , Φ 3 ) to ﬁnd non-trivial multipliers in this class. In particular we recover some of the known results for Lebesgue spaces. Let G be a locally compact group, Φ be a Young function, and denote by L Φ ( G ) the associated Orlicz space. This talk is a survey of results on Banach algebra and Banach module structures of Orlicz spaces on G that we have obtained recently in collaboration with our colleagues. We present conditions for an Orlicz algebra to be Arens regular. We investigate their cohomological properties such as amenability. We determine when an Orlicz algebra is an operator algebra. Our approach can be applied to a vast variety of cases and extend the results in the classical situation. This presentation draws joint works and of -algebra -algebra We study a new class of potentially exotic group C ∗ -algebras C ∗ (PF ∗ p ( G )) for a locally compact group G , and its connection with the class of potentially exotic group C ∗ -algebras C ∗ L p ( G ) introduced by Brown and Guentner. Surprisingly, these two classes of C ∗ -algebras are intimately related. By exploiting this connection, we show that C ∗ L p ( G ) = C ∗ (PF ∗ p ( G )) for p ∈ (2 , ∞ ), and the C ∗ -algebras C ∗ L p ( G ) are pairwise distinct for p ∈ (2 , ∞ ) when G belongs to a large class of nonamenable groups possessing the Haagerup property and either the rapid decay property or Kunze-Stein phenomenon by characterizing the positive deﬁnite functions that extend to positive linear functionals of C ∗ L p ( G ) and C ∗ (PF The Bargmann transform is a transform that maps",
-		"rank": 2,
+		"uid": "S2:53733ce495a5c9fdad2b69f72f361d375dcb4c2a",
+		"title": "Individual Differences as a Key Factor to Uncover the Neural Underpinnings of Hedonic and Social Functions of Human Olfaction: Current Findings from PET and fMRI Studies and Future Considerations",
+		"doi": "10.1007/s10548-019-00733-9",
+		"rank": 20,
 		"year": 2019,
 		"volume": 0,
 		"issue": 0,
 		"startpage": 0,
 		"endpage": 0,
-		"cites": 0,
-		"ecc": 0,
+		"cites": 14,
+		"ecc": 14,
 		"use": 1,
 		"authors": [
-			"Serap Öztop Kaptanoğlu"
-		]
-	},
-	{
-		"uid": "S2:82d446a89bd6c42043df42eeb444c88168b69bc9",
-		"title": "Integrated methods for understanding charge transport and distribution inside active electrical storms",
-		"abstract": "SUMMARY OF PROPOSED WORK A “lightning mapping array” (LMA) yields detailed spatio-temporal maps of lightning discharges by locating emitted radiofrequency (RF) radiation associated with channel breakdowns. Because the LMA is has 10-100 microsec. resolution, it increases the importance to develop new techniques that measure charge transport on the same time-scale. The innovation I propose is an airborne time-resolved “field-change” sonde (TRFCS) to study charge transport. Initially balloon-launched, the device is to be refined until it is small enough to be dropped from an aircraft. Ground-based TRFCS’s have been used, though the presence of the Earth’s ground-plane causes only the vertical component of E to give useful information. Further, ground-based sensors are usually far from the lightning channels so that data-interpretation is complicated. DC-field sondes (DCS) have been used in balloon soundings to learn most of what is known today about the parent cloud charge structure. The frequency response of a DCS is typically 0-10 Hz. My proposed TRFCS (frequency response 10 Hz-100 kHz) will be used in the following scientific studies: 1) One TRFCS enables quantification of the charges transported along a nearby lightning channel whose position is determined by an LMA. It also allows measurement of charges transported along the channel after it is well-ionized and no longer emitting the RF that makes it visible to the LMA. 2) Multiple TRFCS’s enable a resolution of the difference between time-variation and space variations of charge, and a 3-D mapping of parent charges. Thunderstorm data to date is mostly 1-D (charge vs. altitude), though recent work is extending it to 3-D. I would add the time-resolved element to these studies. A) Lightning – Exciting, Dangerous! Somewhere on Earth lightning strikes roughly every second of the day. A lightning stroke is dramatic (-40 kAmp, 100 MVolt, 30,000 K), and in the last decade, we have begun to finally understand it. Lightning protection is a social benefit, and short-term lightning prediction is now practiced. (DC electric \"field-mills [Winn78] deployed outdoors provide several minutes warning because the vertical component of the E-field increases from its fairweather value of roughly -100 V/m to +10 kV/m in the 10 minutes in which an electrical storm-cell develops.) B) State of Art – Lightning energetics, the LMA and “The Potential Well Model” The state of understanding in this area can be found in recent papers such as Coleman et al. [Coleman02]. (Figures 1 and 2 are taken from that publication.) Data is interpreted via a simple model of lightning energetics. A lighting flash gets its energy from the electrostatic energy density 1 2( ) V ρ (with ρ = local charge density and V the local potential). Given that clouds may be modeled as electric tripoles [Williams89], it is most energetically favorable for the flash to deposit positive charge in a predominantly negative charge-center, or vice-versa [Proctor91]. Figure 2 shows experimentally measured potential through a storm, obtained by integrating E-field from a balloonlaunched DCS along the z-axis. Experiments confirmed that positive flashes deposited their charge in the negative potential well around 7 km. Likewise, negative flashes deposited their charge in the positive well around 9 km. Figure 1 hints at the power of the LMA. [Rison99 for full details]. A representative flash is plotted as altitude vs. time by location of its RF emissions. Note that most of the data points of the negatively discharge are concentrated at 9-10 km (near the + potential well). A positively charged branch is concentrated around 7 km (near the potential well). In particular, data verifies predictions that flashes should arise in the highest-field regions of the cloud, and deposit charge, for intercloud (IC) flashes, in “potential wells” appropriate to the sign of the charge. Also apparent from Fig. 1 is the relative paucity of data points corresponding to the positive discharge. This is a known lightning-RF phenomenon and allows one to distinguish negative from positive discharges. C) The Problems I want to address two problems; quantifying the transport of charge by a lightning flash, and the related (more-studied) problem of the parent distribution of charge in a thunderstorm. Field change data ( E ∆ ) addresses the first problem, while the DCfield data (simply “E”) addresses the second. I want to take the data interpretation of the parent distribution beyond the tripole model and address horizontally varying as well as vertically varying charge distributions. I hope from the E ∆ data to get a more detailed view of the local charge “pockets” created by IC flashes. Progress will be enabled by a new generation of instrument to be developed and by correlation with LMA data. This research can lead to stronger confirmation of the potential-well model. Not all experimental data fits this model. The deviations are currently explained as being caused by horizontal and temporal variations in charge. Characterizing these with new-generation instruments will either confirm the model or suggest ways in which it must be modified. D) Broader Scope Previous-generation electrical sondes (DCS) [Winn75] have been in productive use for nearly 30 years by the electrical-storm community. This encourages one about potential contributions of new instruments. Generally, electrical characterization opens a window into the heart of many significant activities in electrified storms. E) Plan of Procedure Recent developments enable pursuit of the detailed distribution of charges and the effect of charge locations on the path of the lightning stroke, which improves understanding of the entire discharge process. To that end, I propose to develop a next generation of electrical sonde integrating telemetry and global-positioning system (GPS) with 100-kHz vector field change ( E ∆ ) and vector DC E-field meters. I call the whole instrument a TRFCS (Time-resolved fieldchange sonde) as that captures its most novel features. However, several other features are novel. The TRFCS will be physically compact. It will be based around a modern computing platform (an embedded Linux Pentium PC-104+ computer board with integrated data acquisition). It will use packet-radio or spread-spectrum communications for telemetry. It will have substantial local storage in flash memory so that additional data can be recovered if the instrument survives its landing. It will of course integrate pressure, temperature, and humidity sensors to its electrical measurements. This TRFCS will let us attack the problem of charge transport in greater detail than has previously been achieved. Our methodology overcomes two problems: 1) The inversion problem. The inversion problem, simply stated, is that a space-charge distribution produces a uniquely determined E-field, but a given set of E-field measurements can be produced by an infinite number of spacecharge distributions. Until now, DC E-field measurements (not time-resolved E ∆ measurements) were analyzed to yield static charge distributions (but not transport), because there existed charge models to which data could be fit. [These models are the tripole model, and more generally the 1-D model that ( ) ( ) z z E z ρ ε = ∆ ∆ .] Now, with the advent of the LMA, we have additional information. If one uses LMA data to indicate the position of the lightning channel, then one can interpret E ∆ data to find the overall charge transferred and its distribution along the one-dimensional (though highly ramified) channel. While there is still an inversion problem, the range of possible charge distributions is greatly constrained by the independent knowledge of the channel. It should be straightforward to distinguish between a model in which the bulk of the charge transported is concentrated at the growing tip of the stroke and in which a constant linear density is left behind. (See figure 5). Other exciting things we can hope to learn include how the charge is divided up when the lightning channel reaches a branch point. 2) The difficulty of multiple simultaneous measurements. Stolzenberg, Marshall and Rust, who launched several DCS’s simultaneously [Stolzenberg01], give the state of the art in this respect. With their several grad. student team, they launched several balloons with sondes over a 30-minute period. It is unlikely that one can do much better than this with balloons, so our ultimate goal is a payload small enough that it can be launched from an aircraft dropsonde tube. Research aircraft, like the future NCAR Gulfstream-V, are now capable of getting above all significant storms and dropping instruments in any desired pattern or density. This multi-launch capability will benefit both the study of DC-fields (E) and charges and the study of charge-transport via E ∆ .",
-		"rank": 3,
-		"year": 2003,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 0,
-		"ecc": 0,
-		"use": 1
-	},
-	{
-		"uid": "S2:6807182583caacd6f8c002393e90c72347449358",
-		"title": "Welcome to the Intractable Likelihoods Workshop 2015",
-		"abstract": "Surveys often ask respondents to report non-negative counts, but respondents may misremember or round to a nearby multiple of 5 or 10. The error inherent in this heaping can bias estimation. To avoid bias, we propose a novel reporting distribution arising from a general birth-death process whose underlying parameters are readily interpretable as rates of misremembering and rounding. The process accommodates a variety of heaping grids and allows for quasi-heaping to values nearly but not equal to heaping multiples. Inference using this stochastic process requires novel, efficient techniques to compute finite-time transition probabilities for arbitrary birth-death processes that we provide through Laplace transforms and a continued fraction representation. We present a Bayesian hierarchical model for longitudinal samples with covariates to infer both the unobserved true distribution of counts and the parameters that control the heaping process. Finally, we apply our methods to longitudinal self-reported counts of sex partners in a study of high-risk behaviour in HIV-positive youth. Dawn Woodard Efficiency of ABC-MCMC / Driving Time Reliability Prediction I will present two topics. The first consists of our recent results on the efficiency of approximate Bayesian computation (ABC). We address Markov chain Monte Carlo versions of ABC, presenting the surprising result that multiple pseudo-samples typically do not improve the efficiency of the algorithm as compared to employing a highvariance estimate computed using a single pseudo-sample. This means that it is unnecessary to tune the number of pseudo-samples, and is in contrast to particle MCMC methods, in which many particles are often required to provide sufficient accuracy. The second topic is prediction of the reliability of driving time on a road network, for use in mapping services like Bing Maps or Google Maps. Such mapping services provide recommended routes between a specified origin and destination, along with predictions of driving time on those routes. However, there can be considerable uncertainty in those predictions, due for example to incomplete knowledge of traffic conditions. Accurate probabilistic forecasts of driving time account for this uncertainty, and can be used to report driving time reliability to a user, or as a component of fleet vehicle decision support systems. I present methods for probabilistic prediction of driving time on arbitrary routes in a road network at arbitrary times, and apply those methods to large volumes of mobile phone GPS data from the Seattle metropolitan region. Sinan Yildirim, University of Bristol On an alternative class of exact-approximate MCMC algorithms (Joint work with Christophe Andrieu and Arnaud Doucet.) Consider the standard Metropolis-Hastings (MH) algorithm for a given distribution P on x. This talk is on exact-approximate algorithms that expand the scope of MH to situations where its acceptance ratio r(x, x’) is intractable. We present a novel class of exact-approximate MH algorithms. The motivation is the desire to benefit averaging of multiple noisy estimates of r(x, x’) and still preserving detailed balance w.r.t. P. We show that this is indeed possible with the use of a pair of proposal kernels and asymmetric acceptance ratios. Moreover, the steps within one iteration that increase statistical efficiency with the cost of extra computation are parallelizable. One interesting application of the methodology that will be discussed in the talk is a simple extension of the exchange algorithm for doubly intractable distributions. Use of the methodology for general latent variable models will also be demonstrated with a toy example. Peter Glynn, Stanford University Dealing with the Initial Transient in Markov Chain Simulations The “initial transient” refers to the initial segment of a Markov chain’s simulation that is most impacted by bias related to a non-equilibrium initialization. Theoretical analysis of this problem typically involves computing bounds on the “second eigenvalue/spectral gap” of the process. In this talk, we discuss sample-based methods for mitigating the effect of the initial transient and measuring its magnitude. Such sample-based methods, derived from a simulation of the Markov chain, are potentially applicable in settings where good theoretical estimates of rates of convergence to equilibrium are unavailable. Paul Jenkins, University of Warwick A tractable approach to intractable likelihoods in population genetics models with recombination Population genetics models provide a rich source of intractable likelihoods; only under very restrictive assumptions about the evolution of a population can a likelihood be written down in closed form. However, advances in DNA sequencing are providing a wealth of data on genetic variation, and we should like to perform inference on the numerous biological and demographic processes shaping this variation: mutation, natural selection, historical migrations, population structure, and so on. In practice we must usually resort to computationally intensive Monte Carlo approaches, summary statistics, heuristic model simplifications, or a combination of these. In this talk I will describe a new analytic method for the purposes of inference about the process of recombination. Recombination is a fundamental aspect of reproduction which causes the shuffling of genetic variants, or alleles, along a chromosome so that the genetic makeup of an offspring differs from that of its parent. Quantifying recombination is vital in for example locating genes associated with complex diseases. I will show how an application of the martingale central limit theorem can be used to derive an accurate model of recombination with a key property: its likelihood is entirely tractable. The result is illustrated by embedding the likelihood in a reversible jump Markov chain Monte Carlo algorithm, and applying this to genomic data from the model fruit fly Drosophila melanogaster. We constructed the first genome-wide maps of fine-scale recombination rate variation in this organism. Max Welling, University of Amsterdam Approximate Bayesian Computation with Noisy Gradients: From Big Data to Complex Simulations Bayesian inference is a natural and elegant tool to handle uncertainty. Unfortunately, in all but trivial cases, exact Bayesian inference is computationally highly demanding. In the face of very large datasets, even approximate inference schemes, such as MCMC may become impractical. In this talk I will present progress for a class of approximate Bayesian inference methods that scale to very large datasets. These “stochastic gradient MCMC” methods use only small subsets of the data for every update and computation can be conveniently distributed across many machines. We will discuss some applications of this technique to Bayesian Topic Modelling, Collaborative Filtering and Network Models. Bayesian inference is also the method of choice in likelihood free settings, where the likelihood can only be assessed through, often highly complex, simulations. We show how the same stochastic gradient MCMC methods can also be successfully applied to high dimensional likelihood free inference problems. Matthew Stephens, University of Chicago Dynamic Statistical Comparisons When several statistical methods exist for the same task, it is common, and useful, to compare their performance on empirical benchmark data both real and simulated. However, the way this benchmarking is usually done in practice by publishing comparisons in journal papers is far from ideal. For example, comparisons are usually performed by the research group that developed one of the methods, which almost inevitably favours that method. Furthermore, performing these kinds of comparisons is incredibly time-consuming, requiring careful familiarization with software implementing the methods, and the creation of pipelines and scripts for running and comparing them. And in fast-moving fields new methods or software updates appear so frequently that comparisons are out of date before they even appear. In summary, the current system results in a large amount of wasted effort, with multiple groups performing redundant and sub-optimal comparisons. In this talk I will describe our (recently started and ongoing) work to try to help improve this situation. Our goal is to enrol your help to make this kind of benchmarking more dynamic by developing (somewhat) standardized formats and structures for making statistical comparisons, and, most importantly, by publishing code, data and pipeline scripts in easily-extendible public internet repositories. Alexendre Thiery, National University Asymptotic Analysis of Random-Walk Metropolis on Ridged Densities The asymptotic behaviour of local-move MCMC algorithms in high-dimensions is by now well understood and the emergence of diffusion processes as trajectory limits has been proved in many such contexts. The results obtained so far involve mainly i.i.d scenarios, though there are now a number of generalizations in high/infinite dimensions. We adopt a different point of view and look at cases when the target distributions tend to exhibit `ridges' along directions of the state space. Such contexts could arise for instance in classes of models when data arrive with small noises or when there are non-identifiable subsets of parameters. In an asymptotic context all probability mass will concentrate on a manifold. We show that diffusion limits (on a manifold) abound also in this set-up of ridged densities and are particularly useful for identifying computational costs or providing optimality criteria. POSTER PRESENTATIONS Jim Barrett, University of Birmingham CARMA models for the efficient characterisation of noise in the time domain Noise is an inevitable part of any experimental measurement. It is therefore of great importance to develop techniques of efficiently characterising and understanding the ",
-		"rank": 4,
-		"year": 2015,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 0,
-		"ecc": 0,
-		"use": 1,
-		"authors": [
-			"C. Jewell"
+			"M. Mantel",
+			"C. Ferdenzi",
+			"Jean-Michel Roy",
+			"M. Bensafi"
 		]
 	}
 ]
