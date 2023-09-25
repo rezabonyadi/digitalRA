@@ -1,413 +1,351 @@
 ﻿[
 	{
-		"uid": "S2:5f7d796e31d790676ac0389f6fb707b985f8b2af",
-		"title": "Extending Evidence for Inter-Individual Differences in Social Comparison Orientation to Pay Fairness Evaluations",
-		"doi": "10.1177/0033294119849018",
-		"abstract": "This research extends the limited support for social comparison tendencies as an individual difference variable and a key moderator of pay fairness perceptions. Through three studies comprised of five data collections, the following adapts a measure of social comparison orientation to pay contexts and examines its association with heightened perceptions of distributive fairness in hypothetical and actual scenarios of pay equity, over-reward, and under-reward. In keeping with Gibbons and Buunk’s construal, our targeted operationalization of social comparison orientation demonstrated inter-individual variation and intra-individual stability, providing corroboration of distinct individual predispositions towards social comparison. Our experimental findings further support this point in that socially relative pay information had a stronger impact on pay fairness evaluations among individuals predisposed to socially compare and a relatively weak impact on those that were not. This investigation is complementary but distinct from the prevalent focus on situational factors as drivers of social comparison. Further, examining this point in the context of pay is timely based on the recent level of public and managerial attention given to the fairness of relative pay differences.",
+		"type": "Journal Article",
+		"title": "Social cognition and adjustment in adult survivors of pediatric central nervous system tumors.",
+		"source": "Cancer",
+		"issn": "1097-0142",
+		"doi": "10.1002/cncr.34889",
+		"abstract": "Survivors of pediatric central nervous system (CNS) tumors are at risk for neurocognitive and social difficulties throughout childhood. This study characterized social cognition (perception and reasoning from social cues) and adjustment in adulthood. A total of 81 adult survivors of pediatric CNS tumors (51% female; mean [SD] age, 28.0 [5.8] years), were recruited across four groups: (1) no radiation therapy (RT) [n = 21], (2) infratentorial (IT) tumors + focal RT [n = 20], (3) IT tumors + craniospinal irradiation [n = 20], and (4) supratentorial tumors + focal RT [n = 20]. Prevalence of social cognitive and adjustment impairments was compared to test norms. Multivariable models examined clinical and neurocognitive predictors of social cognition and its impact on functional outcomes. Survivors demonstrated elevated risk of severe social cognitive impairments (social perception Morbidity Ratio [95% CI] 5.70 [3.46-9.20]), but self-reported few social adjustment problems. Survivors of IT tumors treated with craniospinal irradiation performed nearly 1 SD worse than survivors treated without RT on multiple measures of social cognition (e.g., social perception: β = -0.89, p = .004). Impaired executive functioning and nonverbal reasoning were associated with worse social cognitive performance (e.g., social perception: β = -0.75, p < .001; β = -0.84, p < .001, respectively). Better social perception was associated with higher odds of attaining full-time employment (odds ratio, 1.52 [1.17-1.97]) and at least some college education (odds ratio, 1.39 [1.11-1.74]). Adult survivors of CNS tumors are at elevated risk of severely impaired social cognition, but do not perceive social adjustment difficulties. Better understanding of potential mechanisms underlying social cognitive deficits may inform intervention targets to promote better functional outcomes for at-risk survivors.",
 		"rank": 1,
-		"year": 2020,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 1,
-		"ecc": 1,
+		"year": 2023,
+		"volume": 129,
+		"issue": 19,
+		"startpage": 3064,
+		"endpage": 3075,
+		"cites": 0,
+		"ecc": 0,
 		"use": 1,
 		"authors": [
-			"K. Merriman",
-			"Atthaphon Mumi",
-			"L. Turner"
+			{
+				"name": "Chiara Papini",
+				"affiliation": "Department of Psychology and Biobehavioral Sciences, St. Jude Children's Research Hospital, Memphis, Tennessee, USA."
+			},
+			{
+				"name": "Victoria W Willard",
+				"affiliation": "Department of Psychology and Biobehavioral Sciences, St. Jude Children's Research Hospital, Memphis, Tennessee, USA."
+			},
+			{
+				"name": "Amar Gajjar",
+				"affiliation": "Department of Pediatric Medicine, St. Jude Children's Research Hospital, Memphis, Tennessee, USA."
+			},
+			{
+				"name": "Thomas E Merchant",
+				"affiliation": "Department of Radiation Oncology, St. Jude Children's Research Hospital, Memphis, Tennessee, USA."
+			},
+			{
+				"name": "Deokumar Srivastava",
+				"affiliation": "Department of Biostatistics, St. Jude Children's Research Hospital, Memphis, Tennessee, USA."
+			},
+			{
+				"name": "Gregory T Armstrong",
+				"affiliation": "Department of Oncology, St. Jude Children's Research Hospital, Memphis, Tennessee, USA."
+			},
+			{
+				"name": "Melissa M Hudson",
+				"affiliation": "Department of Oncology, St. Jude Children's Research Hospital, Memphis, Tennessee, USA."
+			},
+			{
+				"name": "Kevin R Krull",
+				"affiliation": "Department of Psychology and Biobehavioral Sciences, St. Jude Children's Research Hospital, Memphis, Tennessee, USA."
+			},
+			{
+				"name": "Tara M Brinkman",
+				"affiliation": "Department of Psychology and Biobehavioral Sciences, St. Jude Children's Research Hospital, Memphis, Tennessee, USA."
+			}
 		]
 	},
 	{
-		"uid": "S2:b5241545f9a51d7a7acff009e41e34ff7af108c4",
-		"title": "A Systematic Review of Individual Differences in Perception, Action, and Decision Making: Implications for Dance Education",
-		"doi": "10.12678/1089-313X.061522d",
-		"abstract": "This systematic bibliometric review summarizes recent neurocognitive research highlighting inter-individual differences in perception, action, and decision making that may have implications for dance education. First, the relevance of individual differences in cognitive functioning for dance education is illustrated by describing how a persons preferred reliance on certain perceptual motor, or (meta) cognitive skills may be exploited in dance training. Subsequently, we describe the findings of a literature search conducted to identify cognitive neuroscientific publications between 2010 and 2021 that highlight individual differences in cognitive functions that were also found to be supported by structural or functional-connectivity differences in the central nervous system. To cluster the findings of the literature search, we propose a simplified, six-category information processing model. Finally, for each model category, we summarize recent representative findings on salient individual differences and tentatively formulate testable implications for dance education practice with regard to pedagogical and curricula adaptations. Finally, the review also delineates an agenda for lines of research of which the results hopefully will assist dance instructors in the future.",
+		"type": "Journal Article",
+		"title": "Touching you, touching me: Higher incidence of mirror-touch synaesthesia and positive (but not negative) reactions to social touch in Autonomous Sensory Meridian Response.",
+		"source": "Consciousness and cognition",
+		"issn": "1090-2376",
+		"doi": "10.1016/j.concog.2022.103380",
+		"abstract": "The characterisation of autonomous sensory meridian response (ASMR) as an audio-visual phenomenon overlooks how tactile experiences are not just perceptual concurrents of ASMR (i.e., tingling) but also commonly strong ASMR inducers. Here we systematically investigated whether ASMR-responders show altered tactile processing compared to controls. Using a screening measure of vicarious touch with a predefined cut-off for mirror-touch synaesthesia (MTS; a condition where tactile sensations are experienced when viewing, but not receiving, touch), we found that ASMR-responders had more frequent and intense vicarious touch experiences, as well as a strikingly higher incidence of MTS, than non-responders. ASMR-responders also reported greater reactivity to positive, but not negative, interpersonal touch. Correlations further showed these patterns to be more prevalent in those responders with stronger ASMR. We discuss the implications of our findings in terms of heightened sensory sensitivity, bodily awareness, and the underlying neuro-cognitive mechanisms driving vicarious tactile perception in ASMR and MTS.",
 		"rank": 2,
 		"year": 2022,
-		"volume": 0,
+		"volume": 103,
 		"issue": 0,
-		"startpage": 0,
+		"startpage": 103380,
 		"endpage": 0,
 		"cites": 0,
 		"ecc": 0,
 		"use": 1,
 		"authors": [
-			"Derrick D Brown",
-			"R. Meulenbroek"
+			{
+				"name": "Helge Gillmeister",
+				"affiliation": "University of Essex, Wivenhoe Park, Colchester CO4 3SQ, UK. Electronic address: helge@essex.ac.uk."
+			},
+			{
+				"name": "Angelica Succi",
+				"affiliation": "University of Essex, Wivenhoe Park, Colchester CO4 3SQ, UK; Centro Studi e Ricerche in Neuroscienze Cognitive, Dipartimento di Psicologia, Alma Mater Studiorum - Università di Bologna, Campus di Cesena, 47521 Cesena, Italy."
+			},
+			{
+				"name": "Vincenzo Romei",
+				"affiliation": "Centro Studi e Ricerche in Neuroscienze Cognitive, Dipartimento di Psicologia, Alma Mater Studiorum - Università di Bologna, Campus di Cesena, 47521 Cesena, Italy; IRCCS Fondazione Santa Lucia, 00179 Rome, Italy."
+			},
+			{
+				"name": "Giulia L Poerio",
+				"affiliation": "University of Essex, Wivenhoe Park, Colchester CO4 3SQ, UK."
+			}
 		]
 	},
 	{
-		"uid": "S2:b6a9dca02c121f90397096262df983aead03a7c5",
-		"title": "Inter-Individual Differences in Ornamental Colouration in a Mediterranean Lizard in Relation to Altitude, Season, Sex, Age, and Body Traits",
-		"doi": "10.3390/D13040158",
-		"abstract": "Animals frequently show complex colour patterns involved in social communication, which attracts great interest in evolutionary and behavioural ecology. Most researchers interpret that each colour in animals with multiple patches may either signal a different bearer’s trait or redundantly convey the same information. Colour signals, moreover, may vary geographically and according to bearer qualities. In this study, we analyse different sources of colour variation in the eastern clade of the lizard Psammodromus algirus. Sexual dichromatism markedly differs between clades; both possess lateral blue eyespots, but whereas males in the western populations display strikingly colourful orange-red throats during the breeding season, eastern lizards only show some commissure pigmentation and light yellow throats. We analyse how different colour traits (commissure and throat colouration, and the number of blue eyespots) vary according to body size, head size (an indicator of fighting ability), and sex along an elevational gradient. Our findings show that blue eyespots function independently from colour patches in the commissure and throat, which were interrelated. Males had more eyespots and orange commissures (which were yellow or colourless in females). Throat colour saturation and the presence of coloured commissures increased in older lizards. The number of eyespots, presence of a coloured commissure, and throat colour saturation positively related to head size. However, while the number of eyespots was maximal at lowlands, throat colour saturation increased with altitude. Overall, our results suggest that this lizard harbours several colour signals, which altitudinally differ in their importance, but generally provide redundant information. The relevance of each signal may depend on the context. For example, all signals indicate head size, but commissure colouration may work well at a short distance and when the lizard opens the mouth, while both throat and eyespots might work better at long distance. Meanwhile, throat colouration and eyespots probably work better in different light conditions, which might explain the altitudinal variation in the relative importance of each colour component.",
+		"type": "Journal Article",
+		"title": "Preference for biological motion is reduced in ASD: implications for clinical trials and the search for biomarkers.",
+		"source": "Molecular autism",
+		"issn": "2040-2392",
+		"doi": "10.1186/s13229-021-00476-0",
+		"abstract": "The neurocognitive mechanisms underlying autism spectrum disorder (ASD) remain unclear. Progress has been largely hampered by small sample sizes, variable age ranges and resulting inconsistent findings. There is a pressing need for large definitive studies to delineate the nature and extent of key case/control differences to direct research towards fruitful areas for future investigation. Here we focus on perception of biological motion, a promising index of social brain function which may be altered in ASD. In a large sample ranging from childhood to adulthood, we assess whether biological motion preference differs in ASD compared to neurotypical participants (NT), how differences are modulated by age and sex and whether they are associated with dimensional variation in concurrent or later symptomatology. Eye-tracking data were collected from 486 6-to-30-year-old autistic (N = 282) and non-autistic control (N = 204) participants whilst they viewed 28 trials pairing biological (BM) and control (non-biological, CTRL) motion. Preference for the biological motion stimulus was calculated as (1) proportion looking time difference (BM-CTRL) and (2) peak look duration difference (BM-CTRL). The ASD group showed a present but weaker preference for biological motion than the NT group. The nature of the control stimulus modulated preference for biological motion in both groups. Biological motion preference did not vary with age, gender, or concurrent or prospective social communicative skill within the ASD group, although a lack of clear preference for either stimulus was associated with higher social-communicative symptoms at baseline. The paired visual preference we used may underestimate preference for a stimulus in younger and lower IQ individuals. Our ASD group had a lower average IQ by approximately seven points. 18% of our sample was not analysed for various technical and behavioural reasons. Biological motion preference elicits small-to-medium-sized case-control effects, but individual differences do not strongly relate to core social autism associated symptomatology. We interpret this as an autistic difference (as opposed to a deficit) likely manifest in social brain regions. The extent to which this is an innate difference present from birth and central to the autistic phenotype, or the consequence of a life lived with ASD, is unclear.",
 		"rank": 3,
 		"year": 2021,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
+		"volume": 12,
+		"issue": 1,
+		"startpage": 74,
 		"endpage": 0,
-		"cites": 6,
-		"ecc": 6,
+		"cites": 0,
+		"ecc": 0,
 		"use": 1,
 		"authors": [
-			"G. Moreno-Rueda",
-			"Senda Reguera",
-			"F. J. Zamora‐Camacho",
-			"M. Comas"
+			{
+				"name": "L Mason",
+				"affiliation": "Centre for Brain and Cognitive Development, Birkbeck, University of London, Malet St, London, WC1E 7HX, UK. l.mason@bbk.ac.uk."
+			},
+			{
+				"name": "F Shic",
+				"affiliation": "Center for Child Health, Behavior and Development, Seattle Children's Research Institute, Seattle, WA, USA."
+			},
+			{
+				"name": "T Falck-Ytter",
+				"affiliation": "Development and Neurodiversity Lab, Department of Psychology, Uppsala University, Uppsala, Sweden."
+			},
+			{
+				"name": "B Chakrabarti",
+				"affiliation": "Centre for Autism, School of Psychology and Clinical Language Sciences, University of Reading, Reading, RG6 6AL, UK."
+			},
+			{
+				"name": "T Charman",
+				"affiliation": "Institute of Psychiatry, Psychology and Neuroscience, King's College, London, London, UK."
+			},
+			{
+				"name": "E Loth",
+				"affiliation": "Institute of Psychiatry, Psychology and Neuroscience, King's College, London, London, UK."
+			},
+			{
+				"name": "J Tillmann",
+				"affiliation": "Institute of Psychiatry, Psychology and Neuroscience, King's College, London, London, UK."
+			},
+			{
+				"name": "T Banaschewski",
+				"affiliation": "Central Institute of Mental Health, University of Heidelberg, Mannheim, Germany."
+			},
+			{
+				"name": "S Baron-Cohen",
+				"affiliation": "Department of Psychology, University of Cambridge, Cambridge, UK."
+			},
+			{
+				"name": "S Bölte",
+				"affiliation": "Center of Neurodevelopmental Disorders (KIND), Centre for Psychiatry Research; Department of Women's and Children's Health, Karolinska Institutet and Child and Adolescent Psychiatry, Stockholm Health Care Services, Region Stockholm, Stockholm, Sweden."
+			},
+			{
+				"name": "J Buitelaar",
+				"affiliation": "Department of Cognitive Neuroscience, Donders Institute for Brain, Cognition and Behaviour, Radboudumc, Nijmegen, The Netherlands."
+			},
+			{
+				"name": "S Durston",
+				"affiliation": "NICHE-Lab, Dept. of Psychiatry, UMC Utrecht Brain Center, Utrecht, The Netherlands."
+			},
+			{
+				"name": "B Oranje",
+				"affiliation": "NICHE-Lab, Dept. of Psychiatry, UMC Utrecht Brain Center, Utrecht, The Netherlands."
+			},
+			{
+				"name": "A M Persico",
+				"affiliation": "Interdepartmental Program \"Autism 0-90\", University of Messina, Messina, Italy."
+			},
+			{
+				"name": "C Beckmann",
+				"affiliation": "Department of Cognitive Neuroscience, Donders Institute for Brain, Cognition and Behaviour, Radboudumc, Nijmegen, The Netherlands."
+			},
+			{
+				"name": "T Bougeron",
+				"affiliation": "Human Genetics and Cognitive Functions, Institut Pasteur, UMR3571 CNRS, Université de Paris, 75015, Paris, France."
+			},
+			{
+				"name": "F Dell'Acqua",
+				"affiliation": "Institute of Psychiatry, Psychology and Neuroscience, King's College, London, London, UK."
+			},
+			{
+				"name": "C Ecker",
+				"affiliation": "Institute of Psychiatry, Psychology and Neuroscience, King's College, London, London, UK."
+			},
+			{
+				"name": "C Moessnang",
+				"affiliation": "Department of Psychiatry and Psychotherapy, Central Institute of Mental Health, University of Heidelberg, Mannheim, Germany."
+			},
+			{
+				"name": "D Murphy",
+				"affiliation": "Institute of Psychiatry, Psychology and Neuroscience, King's College, London, London, UK."
+			},
+			{
+				"name": "M H Johnson",
+				"affiliation": "Centre for Brain and Cognitive Development, Birkbeck, University of London, Malet St, London, WC1E 7HX, UK."
+			},
+			{
+				"name": "E J H Jones",
+				"affiliation": "Centre for Brain and Cognitive Development, Birkbeck, University of London, Malet St, London, WC1E 7HX, UK."
+			}
 		]
 	},
 	{
-		"uid": "S2:c0df2b750a76decd8b2e24801e13ea6be1435e4a",
-		"title": "Individual dynamics of delta-beta coupling: using a multilevel framework to examine inter- and intraindividual differences in relation to social anxiety and behavioral inhibition.",
-		"doi": "10.1111/jcpp.13319",
-		"abstract": "BACKGROUND\nVariation in EEG-derived delta-beta coupling has recently emerged as a potential neural marker of emotion regulation, providing a novel and noninvasive method for assessing a risk factor for anxiety. However, our understanding of delta-beta coupling has been limited to group-level comparisons, which provide limited information about an individual's neural dynamics.\n\n\nMETHODS\nThe present study used multilevel modeling to map second-by-second coupling patterns between delta and beta power. Specifically, we examined how inter- and intraindividual delta-beta coupling patterns changed as a function of social anxiety symptoms and temperamental behavioral inhibition (BI).\n\n\nRESULTS\nWe found that stronger inter- and intraindividual delta-beta coupling were both associated with social anxiety. In contrast, the high-BI group showed weaker coupling relative to the non-BI group, a pattern that did not emerge when analyzing continuous scores of BI.\n\n\nCONCLUSIONS\nIn characterizing inter- and intraindividual coupling across the sample, we illustrate the utility of examining neural processes across levels of analysis in relation to psychopathology to create multilevel assessments of functioning and risk.",
+		"type": "Journal Article",
+		"title": "Brain mechanisms of visuospatial perspective-taking in relation to object mental rotation and the theory of mind.",
+		"source": "Behavioural brain research",
+		"issn": "1872-7549",
+		"doi": "10.1016/j.bbr.2021.113247",
+		"abstract": "Visuospatial perspective-taking (VPT) is a process of imagining what can be seen and how a scene looks from a location and orientation in space that differs from one's own. It comprises two levels that are underpinned by distinct neurocognitive processes. Level-2 VPT is often studied in relation to two other cognitive phenomena, object mental rotation (oMR) and theory of mind (ToM). With the aim to describe the broad picture of neurocognitive processes underlying level-2 VPT, here we give an overview of the recent behavioral and neuroscientific findings of level-2 VPT. We discuss its relation to level-1 VPT, which is also referred to as perspective-tracking, and the neighboring topics, oMR and ToM. Neuroscientific research shows that level-2 VPT is a diverse cognitive process, encompassing functionally distinct neural circuits. It shares brain substrates with oMR, especially those parietal brain areas that are specialized in spatial reasoning. However, compared to oMR, level-2 VPT involves additional activations in brain structures that are typically involved in ToM tasks and deal with self/other distinctions. In addition, level-2 VPT has been suggested to engage brain areas coding for internal representations of the body. Thus, the neurocognitive model underpinning level-2 VPT can be understood as a combination of visuospatial processing with social cognition and body schema representations.",
 		"rank": 4,
-		"year": 2020,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 11,
-		"ecc": 11,
-		"use": 1,
-		"authors": [
-			"B. Anaya",
-			"Alicia Vallorani",
-			"Koraly Pérez-Edgar"
-		]
-	},
-	{
-		"uid": "S2:b560c9ae16a5829e87a5d40f9a00acd8c62dec43",
-		"title": "Perception of mineral character in Sauvignon blanc wine: inter-individual differences",
-		"doi": "10.4081/WS.2014.4474",
-		"abstract": "Of the descriptors employed to characterize wine organoleptically, minerality is arguably one of the most enigmatic. The aim of the work described in this article was to delineate the nature of perceived minerality in Sauvignon wine, specifically its sensorial reality for experienced wine professionals from France and New Zealand. Participants evaluated 16 Sauvignon blanc wines (8 French; 8 New Zealand) under three conditions, ortho-nasal olfaction, palate only (Nose-clip condition), and by full tasting (global perception). Data from the global condition only are reported here. Key results include: i) that although there were quantitative differences in perception of minerality as a function of culture, there was substantial agreement conceptually between French and New Zealand participants in terms of the sensorial experience of minerality; and ii) that perceived minerality associated significantly with other key wine descriptors, notably presence of citrus, stone-related characters (e.g., flinty or chalky/calcareous notes), and reductive notes, along with absence of Sauvignon varietal characteristics (passion fruit; green notes). Of particular interest, no significant, direct association was found between perceived sourness/acidity and minerality judgments for either culture.",
-		"rank": 5,
-		"year": 2014,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 1,
-		"ecc": 1,
-		"use": 1,
-		"authors": [
-			"W. Parr",
-			"Jordi Ballester",
-			"D. Peyron",
-			"C. Grose",
-			"D. Valentin"
-		]
-	},
-	{
-		"uid": "S2:89ab17089f07dab841a6443e48f2cd16bbc0b509",
-		"title": "A proxy measure of striatal dopamine predicts individual differences in temporal precision",
-		"doi": "10.3758/s13423-022-02077-1",
-		"rank": 6,
-		"year": 2022,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 1,
-		"ecc": 1,
-		"use": 1,
-		"authors": [
-			"Renata Sadibolova",
-			"Luna Monaldi",
-			"D. Terhune"
-		]
-	},
-	{
-		"uid": "S2:486db8d291f1d04181963b258d7bed76fe1626f5",
-		"title": "Individual Differences in Mentalizing Tendencies",
-		"doi": "10.1525/collabra.37602",
-		"abstract": "The human capacity to represent others and oneself in terms of internal mental states—mentalizing—varies across individuals. In this paper, we assess the extent to which commonly used mentalizing measures successfully capture meaningful individual differences in mentalizing tendencies and explore how these tendencies relate to broader variability in cognitive and social functioning. To this end, we administered a battery of behavioral and self-report measures of mentalizing, fluid intelligence, personality dimensions, sense of self, cognitive tendencies, and psychopathology symptoms in an online study (N=150). In a series of preregistered analyses, we found that fluid intelligence scores were most predictive of mentalizing variability while dimensions such as psychopathy, empathy and sense of power were also significantly associated with this variability (though to a lesser extent than fluid intelligence). Of the psychopathology symptoms assessed, somatization and self-harm were most strongly associated with inter-individual variability in mentalizing and uncertainty about mental states was the mentalizing dimension most tightly correlated to psychopathology symptoms. Our findings point to the need for more research to explore ways in which mentalizing tendencies are tied to other domains, such as general cognitive functioning and psychopathology. Additionally, our findings highlight the potential for merging clinical assessment tools with social cognition research.",
-		"rank": 7,
-		"year": 2022,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 1,
-		"ecc": 1,
-		"use": 1,
-		"authors": [
-			"Netanel Weinstein",
-			"L. Whitmore",
-			"K. Mills"
-		]
-	},
-	{
-		"uid": "S2:41c42a6bd4571bfff6e93fb1f56a013c0fb4c5c3",
-		"title": "Individual differences in the vicarious perception of pain",
-		"abstract": "Vicarious pain refers to the processes and experiences that arise from observations of other people in pain. Due to the interpersonal and multi-modal nature of these processes, research into the field is highly relevant for a number of key concepts in social cognitive neuroscience, such as empathy, multi-sensory processing and social cognition. The dominant approach in the field has been to focus on normative samples with little focus being given to inter-individual differences. The discovery of a subsample of the population who report conscious experiences of pain when observing it, so called ‘mirror-pain responders’, presents a significant opportunity for developing our understanding of the neural processes and characteristics associated with vicarious pain. The present thesis aims to extend understanding of this group who appear to lie on an extreme end of a spectrum of vicarious pain perception. Although past research has highlighted this group and made some attempts to identify their prevalence, few formal attempts have been made to stringently discover the prevalence and identify the characteristics of their qualitative experience. As such, ARTICLE I developed a questionnaire, named the Vicarious Pain Questionnaire (VPQ), which characterises mirror-pain responders based on their subjective experiences of pain. The results showed a surprisingly high prevalence rate for the condition, ~30%. In addition through the use of a cluster analysis, the VPQ identified subgroups within mirror-pain responders, which included a group who experienced sensory and localised mirror-pain, and a group that experienced affective and generalised mirror-pain. ARTICLE I and ARTICLE II both aimed at assessing the neural basis for the experiences and successfully highlighted the role of hyperactivity in vicarious somatosensory processing, through the use of electrophysiological (EEG) neuro-markers for somatosensory processing (mu rhythm) and functional magnetic resonance imaging (fMRI) activation in the somatosensory cortex during pain observation. Additionally, these articles highlighted the role of self-other processing regions through the use of voxel-based morphometry (VBM) which revealed reduced grey-matter volume in the right temporo-parietal junction (rTPJ), and psycho-physiological interactions (PPI) of fMRI processing which revealed connectivity networks between pain matrix regions and self-other processing regions (rTPJ and dorsomedial prefrontal cortex (DMPFC)). \n \nCharacteristics of the mirror-pain were further assessed in ARTICLE III which in a battery of behavioural and physiological tests were administered to mirror-pain responders and controls. This study showed abnormal autonomic nervous system processing for Affective/General mirror-pain responders and confirmed the link between the condition and questionnaire measures of empathy. Finally, ARTICLE IV failed to provide a causal link between self-other processing regions (rTPJ) and somatosensory activation in response to pain observations through the use of theta-burst transcranial magnetic stimulation (TMS) in non-responders. This calls into question the direct causality of neural mechanisms associated with self-other theories of mirror-pain. This thesis demonstrates the importance of studying inter-individual differences in vicarious pain by reporting a set questionnaire and neuroimaging results which contribute to debates in the field and raises questions for future research. This work, its implications, and contributions to the wider literature are reviewed in the DISCUSSION chapter.",
-		"rank": 8,
-		"year": 2018,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 1,
-		"ecc": 1,
-		"use": 1,
-		"authors": [
-			"Thomas Grice-Jackson"
-		]
-	},
-	{
-		"uid": "S2:9288a8bde611466f84b73aa0394a2561e9697bf5",
-		"title": "Inter-individual differences in time perception: Gene–brain-psychological function",
-		"doi": "10.1016/J.IJPSYCHO.2008.05.507",
-		"rank": 9,
-		"year": 2008,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 0,
-		"ecc": 0,
-		"use": 1,
-		"authors": [
-			"O. Sysoeva",
-			"G. Portnova",
-			"N. Maluchenko",
-			"A. Tonevitsky",
-			"Alexey Ivanitsky"
-		]
-	},
-	{
-		"uid": "S2:4202a5bbf76d0d7426c678e53c1b5943a8a58c3a",
-		"title": "Otolith signals contribute to inter-individual differences in the perception of gravity-centered space",
-		"doi": "10.1007/s00221-013-3816-6",
-		"rank": 10,
-		"year": 2014,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 4,
-		"ecc": 4,
-		"use": 1,
-		"authors": [
-			"C. Cian",
-			"P. Barraud",
-			"A. Paillard",
-			"S. Hidot",
-			"P. Denise",
-			"J. Ventre-Dominey"
-		]
-	},
-	{
-		"uid": "S2:02521289a02cdefb4850124a85a9b36812a67a25",
-		"title": "Characteristics associated with inter-individual variability in financial distress in patients with breast cancer prior to and for 12 months following surgery",
-		"doi": "10.1007/s00520-021-06524-y",
-		"rank": 11,
 		"year": 2021,
-		"volume": 0,
+		"volume": 407,
 		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 3,
-		"ecc": 3,
-		"use": 1,
-		"authors": [
-			"R. Chan",
-			"B. Cooper",
-			"B. Koczwara",
-			"A. Chan",
-			"Chia Jie Tan",
-			"L. Gordon",
-			"S. Paul",
-			"L. Dunn",
-			"Y. Conley",
-			"K. Kober",
-			"G. Abrams",
-			"J. Levine",
-			"C. Miaskowski"
-		]
-	},
-	{
-		"uid": "S2:e6a04268e0c0ae0637b6b7b0ff2711d16353fc86",
-		"title": "Otolith signals contribute to inter-individual differences in the perception of gravity-centered space",
-		"doi": "10.1007/s00221-013-3816-6",
-		"rank": 12,
-		"year": 2014,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
+		"startpage": 113247,
 		"endpage": 0,
 		"cites": 0,
 		"ecc": 0,
 		"use": 1,
 		"authors": [
-			"C. Cian",
-			"P. Barraud",
-			"A. Paillard",
-			"S. Hidot",
-			"P. Denise",
-			"J. Ventre-Dominey"
+			{
+				"name": "Anna Gunia",
+				"affiliation": "Laboratory of Neurophysiology of Memory, Institute of Physiology of the Czech Academy of Sciences, Vídeňská 1083, 142 20 Prague, Czech Republic; Third Faculty of Medicine, Charles University, Ruská 87, 100 00 Prague, Czech Republic. Electronic address: anna.gunia@fgu.cas.cz."
+			},
+			{
+				"name": "Sofiia Moraresku",
+				"affiliation": "Laboratory of Neurophysiology of Memory, Institute of Physiology of the Czech Academy of Sciences, Vídeňská 1083, 142 20 Prague, Czech Republic; Third Faculty of Medicine, Charles University, Ruská 87, 100 00 Prague, Czech Republic. Electronic address: sofiia.moraresku@fgu.cas.cz."
+			},
+			{
+				"name": "Kamil Vlček",
+				"affiliation": "Laboratory of Neurophysiology of Memory, Institute of Physiology of the Czech Academy of Sciences, Vídeňská 1083, 142 20 Prague, Czech Republic. Electronic address: kamil.vlcek@fgu.cas.cz."
+			}
 		]
 	},
 	{
-		"uid": "S2:a78b15d955cf3023f543b4de17602749cf35c97f",
-		"title": "Individual Differences in Temporal Perception and Their Implications for Everyday Listening",
-		"doi": "10.1007/978-3-319-47944-6_7",
-		"rank": 13,
-		"year": 2017,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 20,
-		"ecc": 20,
+		"type": "Journal Article",
+		"title": "Social cognition in the blind brain: A coordinate-based meta-analysis.",
+		"source": "Human brain mapping",
+		"issn": "1097-0193",
+		"doi": "10.1002/hbm.25289",
+		"abstract": "Social cognition skills are typically acquired on the basis of visual information (e.g., the observation of gaze, facial expressions, gestures). In light of this, a critical issue is whether and how the lack of visual experience affects neurocognitive mechanisms underlying social skills. This issue has been largely neglected in the literature on blindness, despite difficulties in social interactions may be particular salient in the life of blind individuals (especially children). Here we provide a meta-analysis of neuroimaging studies reporting brain activations associated to the representation of self and others' in early blind individuals and in sighted controls. Our results indicate that early blindness does not critically impact on the development of the \"social brain,\" with social tasks performed on the basis of auditory or tactile information driving consistent activations in nodes of the action observation network, typically active during actual observation of others in sighted individuals. Interestingly though, activations along this network appeared more left-lateralized in the blind than in sighted participants. These results may have important implications for the development of specific training programs to improve social skills in blind children and young adults.",
+		"rank": 5,
+		"year": 2021,
+		"volume": 42,
+		"issue": 5,
+		"startpage": 1243,
+		"endpage": 1256,
+		"cites": 0,
+		"ecc": 0,
 		"use": 1,
 		"authors": [
-			"B. Shinn-Cunningham",
-			"Lenny A. Varghese",
-			"Le Wang",
-			"Hari M. Bharadwaj"
+			{
+				"name": "Maria Arioli",
+				"affiliation": "Department of Psychology, University of Milano-Bicocca, Milan, Italy."
+			},
+			{
+				"name": "Emiliano Ricciardi",
+				"affiliation": "IMT School for Advanced Studies Lucca, Lucca, Italy."
+			},
+			{
+				"name": "Zaira Cattaneo",
+				"affiliation": "Department of Psychology, University of Milano-Bicocca, Milan, Italy."
+			}
 		]
 	},
 	{
-		"uid": "S2:391368ff531f931085195833532c64c0e43da551",
-		"title": "Individual Differences in Speech Production and Perception",
-		"doi": "10.3726/978-3-653-05777-5",
-		"abstract": "Inter-individual variation in speech is a topic of increasing interest both in human sciences and speech technology. It can yield important insights into biological, cognitive, communicative, and social aspects of language. Written by specialists in psycholinguistics, phonetics, speech development, speech perception and speech technology, this volume presents experimental and modeling studies that provide the reader with a deep understanding of interspeaker variability and its role in speech processing, speech development, and interspeaker interactions. It discusses how theoretical models take into account individual behavior, explains why interspeaker variability enriches speech communication, and summarizes the limitations of the use of speaker information in forensics.",
-		"rank": 14,
-		"year": 2015,
-		"volume": 0,
+		"type": "Journal Article",
+		"title": "From structure to concepts: The two stages of facial expression recognition.",
+		"source": "Neuropsychologia",
+		"issn": "1873-3514",
+		"doi": "10.1016/j.neuropsychologia.2020.107700",
+		"abstract": "Facial expressions are the dominant way of human emotional and social communications. However, it remains unclear that how can perceivers extract emotion from the face. In the present study, we adopted a repetition-priming paradigm in combine with event-related potentials (ERP) to examine neurocognitive processing stages of facial expression perception. Results showed that emotional words were recognized faster than emotional faces, when both of which were primed by emotional faces, indicating the involvement of concepts processes in facial expression recognition. ERP results showed that all emotional faces could evoke responses of N170, while there was no significant difference between positive and negative emotional faces, suggesting that geometrical configurations of faces rather than emotional concepts of faces are processed at the stage of N170. In contrast, both emotional words and faces showed larger P2 in response to anger than happiness, which suggests that emotional concepts are extracted from faces at the stage of P2. To examine the underlying dynamic causal connectivity between facial structure and emotional conception, we conducted information flow analysis, which showed significant decreases of information flow from the fusiform gyrus to dorsal anterior cingulate cortex/dorsal medial prefrontal cortex and increases of information flow from the fusiform gyrus to posterior insula. These results revealed neural mechanisms underlying processes from physical structure to emotional concepts. Our findings suggest that facial expression recognition consists of two stages from geometrical structure of faces to emotional concepts of facial expressions, which provides evidence for facial expression processing and has important implications in the diagnosis and treatment of emotion recognition related disorders.",
+		"rank": 6,
+		"year": 2021,
+		"volume": 150,
 		"issue": 0,
-		"startpage": 0,
+		"startpage": 107700,
 		"endpage": 0,
-		"cites": 13,
-		"ecc": 13,
+		"cites": 0,
+		"ecc": 0,
 		"use": 1,
 		"authors": [
-			"Susanne Fuchs",
-			"D. Pape",
-			"Caterina Petrone",
-			"P. Perrier"
+			{
+				"name": "Shangfeng Han",
+				"affiliation": "Shenzhen Key Laboratory of Affective and Social Neuroscience, Magnetic Resonance Imaging Center, Center for Brain Disorders and Cognitive Sciences, Shenzhen University, Shenzhen, China; School of Psychology, Shenzhen University, Shenzhen, China; Center for Emotion and Brain, Shenzhen Institute of Neuroscience, Shenzhen, China."
+			},
+			{
+				"name": "Jie Hu",
+				"affiliation": "School of Psychology, Sichuan Center of Applied Psychology, Chengdu Medical College, Chengdu, China."
+			},
+			{
+				"name": "Wenting Li",
+				"affiliation": "School of Psychology, Shenzhen University, Shenzhen, China."
+			},
+			{
+				"name": "Shuxuan Zhao",
+				"affiliation": "School of Psychology, Shenzhen University, Shenzhen, China."
+			},
+			{
+				"name": "Minyu Chen",
+				"affiliation": "Department and Institute of Psychology, Ningbo University, Ningbo, China."
+			},
+			{
+				"name": "Pengfei Xu",
+				"affiliation": "Beijing Key Laboratory of Applied Experimental Psychology, Faculty of Psychology, Beijing Normal University, Beijing, China; Great Bay Neuroscience and Technology Research Institute (Hong Kong), Kwun Tong, Hong Kong, China. Electronic address: xupf@szu.edu.cn."
+			},
+			{
+				"name": "Yuejia Luo",
+				"affiliation": "Shenzhen Key Laboratory of Affective and Social Neuroscience, Magnetic Resonance Imaging Center, Center for Brain Disorders and Cognitive Sciences, Shenzhen University, Shenzhen, China; Center for Emotion and Brain, Shenzhen Institute of Neuroscience, Shenzhen, China; School of Psychology, Sichuan Center of Applied Psychology, Chengdu Medical College, Chengdu, China; Beijing Key Laboratory of Applied Experimental Psychology, Faculty of Psychology, Beijing Normal University, Beijing, China; College of Teacher Education, Qilu Normal University, Jining, China. Electronic address: luoyj@szu.edu.cn."
+			}
 		]
 	},
 	{
-		"uid": "S2:1ecad9230a7fa91b2d2caf6a8b6fe9989ca05e56",
-		"title": "Social modulation of individual differences in dance communication in honey bees",
-		"doi": "10.1007/s00265-019-2649-0",
-		"rank": 15,
-		"year": 2019,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 20,
-		"ecc": 20,
+		"type": "Journal Article",
+		"title": "Contrast sensitivity deficits in schizophrenia: A psychophysical investigation.",
+		"source": "The European journal of neuroscience",
+		"issn": "1460-9568",
+		"doi": "10.1111/ejn.15026",
+		"abstract": "Individuals with schizophrenia have problems with visual contrast processing. The current study investigated contrast sensitivity (CS) in schizophrenia/schizoaffective disorder to elucidate the underlying neural mechanisms affected by this disorder and to identify critical testing conditions that distinguish individuals with the disorder from healthy individuals. Principal component analysis was applied to the data (N = 143) to separate responses from distinct visual pathways. Participants were 68 patients and 75 age-similar controls. CS was obtained using a forced-choice psychophysical paradigm with grating patterns of low to high spatial frequency presented at short and long durations. Linear mixed-effects models were used to examine differences in log CS with respect to group, duration, and stimulus condition. Lower CSs were found in patients compared to controls over all stimulus conditions with the magnitude of deficits dependent on both spatial frequency and stimulus duration. Log CSs to low and high spatial frequencies loaded onto separate principal components, supporting the existence of two psychophysical mechanisms, transient and sustained. Critical conditions were identified to tap each mechanism. Visual acuity was correlated moderately with log CS to high, but not low, spatial frequencies, and deficits found for acuity and CS to moderate/high spatial frequencies (4-21 cycles/degree) appear to reflect dysfunction in the sustained mechanism. CS deficits found at the lowest spatial frequency tested (0.5 cycles/degree) appear to reflect dysfunction in the transient mechanism. Both types of CS deficits may have diagnostic value and implications for social and neurocognitive deficits in this disorder.",
+		"rank": 7,
+		"year": 2021,
+		"volume": 53,
+		"issue": 4,
+		"startpage": 1155,
+		"endpage": 1170,
+		"cites": 0,
+		"ecc": 0,
 		"use": 1,
 		"authors": [
-			"E. A. George",
-			"A. Brockmann"
-		]
-	},
-	{
-		"uid": "S2:44aae8c30943d72c5c6ecea63ae2a1ed83cac9ae",
-		"title": "Individual differences in human voice pitch are preserved from speech to screams, roars and pain cries",
-		"doi": "10.1098/rsos.191642",
-		"abstract": "Fundamental frequency (F0, perceived as voice pitch) predicts sex and age, hormonal status, mating success and a range of social traits, and thus functions as an important biosocial marker in modal speech. Yet, the role of F0 in human nonverbal vocalizations remains unclear, and given considerable variability in F0 across call types, it is not known whether F0 cues to vocalizer attributes are shared across speech and nonverbal vocalizations. Here, using a corpus of vocal sounds from 51 men and women, we examined whether individual differences in F0 are retained across neutral speech, valenced speech and nonverbal vocalizations (screams, roars and pain cries). Acoustic analyses revealed substantial variability in F0 across vocal types, with mean F0 increasing as much as 10-fold in screams compared to speech in the same individual. Despite these extreme pitch differences, sexual dimorphism was preserved within call types and, critically, inter-individual differences in F0 correlated across vocal types (r = 0.36–0.80) with stronger relationships between vocal types of the same valence (e.g. 38% of the variance in roar F0 was predicted by aggressive speech F0). Our results indicate that biologically and socially relevant indexical cues in the human voice are preserved in simulated valenced speech and vocalizations, including vocalizations characterized by extreme F0 modulation, suggesting that voice pitch may function as a reliable individual and biosocial marker across disparate communication contexts.",
-		"rank": 16,
-		"year": 2020,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 22,
-		"ecc": 22,
-		"use": 1,
-		"authors": [
-			"K. Pisanski",
-			"J. Raine",
-			"D. Reby"
-		]
-	},
-	{
-		"uid": "S2:7c3810ca6ae4eaf51f174823f66b5e44689ebd53",
-		"title": "Social modulation of individual differences in dance communication in honey bees",
-		"doi": "10.1007/s00265-019-2649-0",
-		"rank": 17,
-		"year": 2019,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 2,
-		"ecc": 2,
-		"use": 1,
-		"authors": [
-			"E. A. George",
-			"A. Brockmann"
-		]
-	},
-	{
-		"uid": "S2:dd378fb884ee92070a90eb05a52ed64795fcbffb",
-		"title": "The structural basis of inter-individual differences in human behaviour and cognition",
-		"doi": "10.1038/nrn3000",
-		"rank": 18,
-		"year": 2011,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 941,
-		"ecc": 941,
-		"use": 1,
-		"authors": [
-			"R. Kanai",
-			"G. Rees"
-		]
-	},
-	{
-		"uid": "S2:bb359649429250aa0926a29175537d1592daa30b",
-		"title": "Inter-individual predictors of pain inhibition during performance of a competing cognitive task",
-		"doi": "10.1038/s41598-020-78653-z",
-		"rank": 19,
-		"year": 2020,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 10,
-		"ecc": 10,
-		"use": 1,
-		"authors": [
-			"V. Tabry",
-			"T. Vogel",
-			"M. Lussier",
-			"P. Brouillard",
-			"J. Buhle",
-			"P. Rainville",
-			"L. Bherer",
-			"M. Roy"
-		]
-	},
-	{
-		"uid": "S2:53733ce495a5c9fdad2b69f72f361d375dcb4c2a",
-		"title": "Individual Differences as a Key Factor to Uncover the Neural Underpinnings of Hedonic and Social Functions of Human Olfaction: Current Findings from PET and fMRI Studies and Future Considerations",
-		"doi": "10.1007/s10548-019-00733-9",
-		"rank": 20,
-		"year": 2019,
-		"volume": 0,
-		"issue": 0,
-		"startpage": 0,
-		"endpage": 0,
-		"cites": 14,
-		"ecc": 14,
-		"use": 1,
-		"authors": [
-			"M. Mantel",
-			"C. Ferdenzi",
-			"Jean-Michel Roy",
-			"M. Bensafi"
+			{
+				"name": "Vance Zemon",
+				"affiliation": "Ferkauf Graduate School of Psychology, Yeshiva University, Bronx, NY, USA."
+			},
+			{
+				"name": "Shaynna Herrera",
+				"affiliation": "Ferkauf Graduate School of Psychology, Yeshiva University, Bronx, NY, USA."
+			},
+			{
+				"name": "James Gordon",
+				"affiliation": "Hunter College of the City University of New York, New York, NY, USA."
+			},
+			{
+				"name": "Nadine Revheim",
+				"affiliation": "Nathan S. Kline Institute for Psychiatric Research, Orangeburg, NY, USA."
+			},
+			{
+				"name": "Gail Silipo",
+				"affiliation": "Nathan S. Kline Institute for Psychiatric Research, Orangeburg, NY, USA."
+			},
+			{
+				"name": "Pamela D Butler",
+				"affiliation": "Nathan S. Kline Institute for Psychiatric Research, Orangeburg, NY, USA."
+			}
 		]
 	}
 ]

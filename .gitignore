@@ -4,3 +4,4 @@ assets/*.exe
 .ipynb_checkpoints/
 settings.json
 output.json
+app.py
