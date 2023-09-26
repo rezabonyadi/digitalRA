@@ -171,7 +171,7 @@ def get_research_assistant(idea_text, short_context_model):
     return researcher_spec
 
 def extract_search_phrases(working_dir, idea_text, short_context_model, researcher_spec, num_search_phrases=5):
-    prompt = f'{researcher_spec} \n\nHere is a description of an idea: {idea_text}. \n Generate {num_search_phrases} search phrases to search in Google for related articles. Generate the search phrases in a json format, with fields of "search phrase X", where X is the number. Include nothing but this json format output in your response.'
+    prompt = f'{researcher_spec} \n\nHere is a description of an idea: {idea_text}. \n Generate {num_search_phrases} search phrases to search in Google for related articles. The phrases need to be short, in the oder of 5 words or so. Generate the search phrases in a json format, with fields of "search phrase X", where X is the number. Include nothing but this json format output in your response.'
     final_response, response = short_context_model.get_llm_response(prompt)
 
     if response is None:

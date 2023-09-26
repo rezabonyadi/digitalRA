@@ -69,6 +69,7 @@ def main():
     print('Digital RA> Extracting search phrases for your idea above ...\n')
 
     search_phrases = utils.extract_search_phrases(working_dir, idea_text, short_context_model, researcher_spec, num_search_phrases)
+    # print(search_phrases)
     print('Digital RA> Here are search phrases I suggest: \n', '\n'.join(search_phrases))
     extra = input("Digital RA> Any other search phrase you want to add (seperate with ';'). Hit Enter if you are happy with the search phrases above: ")
 
