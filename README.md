@@ -2,6 +2,8 @@
 A Digital Research Assistant to Simplify Literature Reviews.
 
 ---
+Here is a very simple example:
+
 ![gif-optimize](https://github.com/rezabonyadi/digitalRA/assets/25924343/a4b43418-0bea-4c9f-a154-520334bbe761)
 
 For researchers!
