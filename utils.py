@@ -208,7 +208,7 @@ def write_litrature_review(working_dir, long_context_model, researcher_spec, ide
     print(litrature_review)
     print(''.join(refs))
 
-    with open(working_dir + 'litrature_review_final.txt', 'w') as f:
+    with open(working_dir + 'litrature_review_final.txt', 'w', encoding="utf-8-sig") as f:
         f.write(litrature_review)
         f.write('\n\nReferences:\n')
         f.write(''.join(refs))
