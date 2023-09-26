@@ -3,7 +3,4 @@ jupyter
 openai
 pandas
 numpy
-scikit-learn
-torch
-transformers
 tiktoken
