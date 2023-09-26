@@ -2,8 +2,15 @@
 A Digital Research Assistant to Simplify Literature Reviews.
 
 ---
+Here is a very simple example:
 
-![DigitalRA Banner](path_to_your_banner_image.png)
+![gif-optimize](https://github.com/rezabonyadi/digitalRA/assets/25924343/a4b43418-0bea-4c9f-a154-520334bbe761)
+
+For researchers!
+
+Provide a paragraph describing an idea, the Digital RA is composed for you with the right skills (overridable by you), performs a paper search for you, estimates the relevance between papers and your idea, picks a subset, and writes a small section of Literature Review for your review and final inclusion in your grant or paper.
+
+MORE: You can chat with the RA about the papers, your ideas, how are they connected, and more.
 
 With `digitalRA`, we aim to simplify the process of literature reviews. By leveraging OpenAI GPT models, we provide researchers a tool that can streamline the discovery of relevant papers, aiding in the comprehensive understanding of a given topic.
 
