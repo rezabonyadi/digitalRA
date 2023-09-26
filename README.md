@@ -2,9 +2,9 @@
 A Digital Research Assistant to Simplify Literature Reviews.
 
 ---
-Here is a very simple example:
+Here is a very simple example (after running, see step by step run at the end of this page):
 
-![gif-optimize](https://github.com/rezabonyadi/digitalRA/assets/25924343/a4b43418-0bea-4c9f-a154-520334bbe761)
+
 
 For researchers!
 
@@ -52,16 +52,10 @@ pip install -r requirements.txt
 5. Run the CLI tool ```pythong.exe main.py```
 6. You can also try the jupyter notebook for tests
 
-## 🙌 Contributing
-
-We value community contributions! For guidelines, check our [Contributing Guidelines](./CONTRIBUTING.md).
-
 ## 📜 License
 
 This project operates under the MIT License. View details in [LICENSE.md](./LICENSE.md).
 
-## 💌 Contact & Support
-
-Got questions or suggestions? Use the [Issues Tab](https://github.com/your_username/digitalRA/issues) or contact us at [support@digitalra.com](mailto:support@digitalra.com).
-
 Ease your research journey with `digitalRA`.
+
+![gif-optimize](https://github.com/rezabonyadi/digitalRA/assets/25924343/a4b43418-0bea-4c9f-a154-520334bbe761)
