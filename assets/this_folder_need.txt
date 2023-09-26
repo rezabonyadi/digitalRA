@@ -1,0 +1,1 @@
+Download publish and perish from https://harzing.com/resources/publish-or-perish/command-line and put the three zip files in this folder
