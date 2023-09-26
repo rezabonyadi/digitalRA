@@ -71,11 +71,16 @@ class llmOperations:
         chat_data = [{'role': 'system', "content": system_prompt}, {'role': 'user', 'content': prompt}]
         # print(chat_data)
         
-        response = openai.ChatCompletion.create(model=self.language_model, messages=chat_data)
-        final_response = response['choices'][0]['message']['content']
+        try:
+            response = openai.ChatCompletion.create(model=self.language_model, messages=chat_data)
+
+            final_response = response['choices'][0]['message']['content']
         
-        self.total_prompt_tokens += response['usage']['prompt_tokens']
-        self.total_cmpl_tokens += response['usage']['completion_tokens']
+            self.total_prompt_tokens += response['usage']['prompt_tokens']
+            self.total_cmpl_tokens += response['usage']['completion_tokens']
+        except:
+            final_response = ""
+            response = None
 
         # print(self.get_current_cost())
         
@@ -158,6 +163,10 @@ def get_llm_models(small_mdl, large_mdl):
 def get_research_assistant(idea_text, short_context_model):
     prompt = "Here is a research proposal:\n"+idea_text+'\n If a professor is going to research this propsoal, what would the professor be expert at? Generate the answer in the format of "You are an expeert in the field of XXX"'
     researcher_spec, response = short_context_model.get_llm_response(prompt)
+    
+    if response is None:
+        print('ATTENTION: OpenAI response error!!!')
+        researcher_spec = "You are an expert researcher in all fields."
 
     return researcher_spec
 
@@ -165,22 +174,33 @@ def extract_search_phrases(working_dir, idea_text, short_context_model, research
     prompt = f'{researcher_spec} \n\nHere is a description of an idea: {idea_text}. \n Generate {num_search_phrases} search phrases to search in Google for related articles. Generate the search phrases in a json format, with fields of "search phrase X", where X is the number. Include nothing but this json format output in your response.'
     final_response, response = short_context_model.get_llm_response(prompt)
 
-    parsed_data = json.loads(final_response)
-    search_phrases = []
-    for i in parsed_data.keys():
-        search_phrases.append(parsed_data[i])
+    if response is None:
+        print('ATTENTION: OpenAI response error!!!')
+        search_phrases = ""
+    else:
+        parsed_data = json.loads(final_response)
+        search_phrases = []
+        for i in parsed_data.keys():
+            search_phrases.append(parsed_data[i])
     return search_phrases
 
 def get_idea_summary(idea_text, short_context_model, researcher_spec):
     prompt = researcher_spec+"\n\nSummarize this research idea to a concise paragraph while make sure it does not loose any important message or question:\n"+idea_text
     idea_text_summary, response = short_context_model.get_llm_response(prompt)
-    
+
+    if response is None:
+        print('ATTENTION: OpenAI response error!!!')
+        idea_text_summary = idea_text
     
     return idea_text_summary
 
 def write_litrature_review(working_dir, long_context_model, researcher_spec, idea_text_summary, papers_df, concated_data):
     prompt = researcher_spec+'\n \n Here is an idea: ' + idea_text_summary + '\n' + "and here are some paper abstracts that are relevant to this idea:\n\n" + concated_data + """\n\n END OF PAPER ABSTRACT PROVIDED.\n \nWrite a litrature review section, which I will be using for my paper in the background section, using these papers about the idea. Use as much as these papers as you can. Ensure the review is engaging and compares the ideas, rather than a flat list of papers. Also, the review makes reference back to my idea where relevant. Use Paper IDs for referencing, for example [Paper ID 3]. Also, at the very end, add one short and condensed paragraph and discuss how my idea is going to advance the field further and what gaps it will be filling."""
     litrature_review, response = long_context_model.get_llm_response(prompt)
+
+    if response is None:
+        print('ATTENTION: OpenAI response error!!!')
+        litrature_review = concated_data
 
     print('your cost so far: ', long_context_model.get_current_cost())
 
