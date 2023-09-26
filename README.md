@@ -1,4 +1,4 @@
-# digitalRA 📖✨
+# Digital Research Assistant 📖✨
 A Digital Research Assistant to Simplify Literature Reviews.
 
 ---
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ```
 3. Read the licence of the Publish and Perish which is used under this app for search capabilities [licence](https://harzing.com/resources/publish-or-perish/end-user-license-agreement)
 4. Download the [publish and perish CLI tool](https://harzing.com/resources/publish-or-perish/command-line) and put the unzip files (there are three exe files) in the assets folder.
-5. Run the CLI tool```pythong.exe main.py```
+5. Run the CLI tool ```pythong.exe main.py```
 6. You can also try the jupyter notebook for tests
 
 ## 🙌 Contributing
