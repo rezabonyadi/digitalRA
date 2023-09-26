@@ -101,10 +101,7 @@ def get_research_papers(working_dir, search_phrases, engines = ['gscholar', 'pub
             combined_df = pd.concat([combined_df, df])
             time.sleep(1)    
     combined_df = combined_df.drop_duplicates(subset=['abstract'])
-    clean_df = combined_df.dropna(subset= ['abstract'])
-
-    # Save the found papers
-    clean_df.to_csv(working_dir+'papers_found.csv')
+    clean_df = combined_df.dropna(subset= ['abstract'])    
 
     return clean_df
 
@@ -135,7 +132,7 @@ def papers_relevances(working_dir, clean_df, researcher_spec, idea_text_summary,
                 
     # Save the results
     relevance_scores_df = pd.DataFrame(relevance_scores)
-    relevance_scores_df.to_csv(working_dir + '/first_level_analysis.csv')
+    
     return relevance_scores_df
 
 def get_llm_models(small_mdl, large_mdl):
@@ -162,12 +159,6 @@ def get_research_assistant(idea_text, short_context_model):
     prompt = "Here is a research proposal:\n"+idea_text+'\n If a professor is going to research this propsoal, what would the professor be expert at? Generate the answer in the format of "You are an expeert in the field of XXX"'
     researcher_spec, response = short_context_model.get_llm_response(prompt)
 
-    print("Digital RA> Hi, I am your research assistant. Here is what I am expert at:\n\n" + researcher_spec)
-    print('Do you want me to acquire other capability?')
-    extra = input("Please enter extra capabilities: ")
-
-    researcher_spec = researcher_spec + ' ' + extra + " You are the best in the world in this field. "
-    print('\n Digital RA> My capabilities: \n\n' + researcher_spec)
     return researcher_spec
 
 def extract_search_phrases(working_dir, idea_text, short_context_model, researcher_spec, num_search_phrases=5):
@@ -180,22 +171,12 @@ def extract_search_phrases(working_dir, idea_text, short_context_model, research
         search_phrases.append(parsed_data[i])
     return search_phrases
 
-def get_curated_summary(working_dir, idea_text, short_context_model, researcher_spec):
+def get_idea_summary(idea_text, short_context_model, researcher_spec):
     prompt = researcher_spec+"\n\nSummarize this research idea to a concise paragraph while make sure it does not loose any important message or question:\n"+idea_text
     idea_text_summary, response = short_context_model.get_llm_response(prompt)
-    print('Here is a summary of your idea: \n', idea_text_summary)
-    extra = input("Is this a fair summary (if yes, press enter, if no, enter a new summary): ")
-
-    if extra != "":
-        idea_text_summary = extra
-
-    with open(working_dir + 'idea_summary.txt', 'w') as f:
-        f.write('Idea: \n\n')
-        f.write(idea_text)
-        f.write('\n\n idea summary:\n\n')
-        f.write(idea_text_summary)
+    
+    
     return idea_text_summary
-
 
 def write_litrature_review(working_dir, long_context_model, researcher_spec, idea_text_summary, papers_df, concated_data):
     prompt = researcher_spec+'\n \n Here is an idea: ' + idea_text_summary + '\n' + "and here are some paper abstracts that are relevant to this idea:\n\n" + concated_data + """\n\n END OF PAPER ABSTRACT PROVIDED.\n \nWrite a litrature review section, which I will be using for my paper in the background section, using these papers about the idea. Use as much as these papers as you can. Ensure the review is engaging and compares the ideas, rather than a flat list of papers. Also, the review makes reference back to my idea where relevant. Use Paper IDs for referencing, for example [Paper ID 3]. Also, at the very end, add one short and condensed paragraph and discuss how my idea is going to advance the field further and what gaps it will be filling."""
@@ -222,9 +203,6 @@ def filter_papers_for_review(min_year, min_cite, working_dir, long_context_model
     concated_data = [('Paper ID '+ str(i) + ': \n' + p + '\n\n') for i, p in enumerate(papers_df['abstract'].values.tolist())]
     concated_data = ''.join(concated_data)
 
-    with open(working_dir + 'used_papers_review.txt', 'w', encoding="utf-8-sig") as f:
-        f.write(concated_data)
-
     # print(concated_data)
     return papers_df, concated_data
 
@@ -239,6 +217,7 @@ def enable_chat(researcher_spc, concated_data, idea_summary, total_cost):
         prompt = input('user> ')
         chat_data.append({'role': 'user', 'content': prompt})
         full_response = "Digital RA> "
+        print(full_response, end='')
         for response in openai.ChatCompletion.create(model=model, messages=chat_data, stream=True):
             gen = response.choices[0].delta.get("content", "")
             full_response += gen
@@ -252,4 +231,4 @@ def enable_chat(researcher_spc, concated_data, idea_summary, total_cost):
         total_cmpl_tokens = len(tokenizer.encode(full_response))
         cost += pricing_map[model][0]*total_prompt_tokens + pricing_map[model][1]*total_cmpl_tokens
 
-        print(f'Digital RA> ------- cost so far {total_cost} plus {cost} \n')
+        print(f'\nDigital RA> ------- cost so far {total_cost} plus {cost} \n')

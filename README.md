@@ -5,7 +5,7 @@ A Digital Research Assistant to Simplify Literature Reviews.
 
 ![DigitalRA Banner](path_to_your_banner_image.png)
 
-With `digitalRA`, we aim to simplify the process of literature reviews. By leveraging advanced machine learning techniques, we provide researchers a tool that can streamline the discovery of relevant papers, aiding in the comprehensive understanding of a given topic.
+With `digitalRA`, we aim to simplify the process of literature reviews. By leveraging OpenAI GPT models, we provide researchers a tool that can streamline the discovery of relevant papers, aiding in the comprehensive understanding of a given topic.
 
 ## 🔍 Features
 
@@ -19,7 +19,9 @@ With `digitalRA`, we aim to simplify the process of literature reviews. By lever
 
 ### Prerequisites
 
-List any required dependencies here.
+Read the licence of the Publish and Perish which is used under this app for search capabilities [licence](https://harzing.com/resources/publish-or-perish/end-user-license-agreement)
+
+Download the [publish and perish CLI tool](https://harzing.com/resources/publish-or-perish/command-line) and put the unzip files (there are three exe files) in the assets folder.
 
 ### Usage
 
@@ -34,8 +36,14 @@ git clone https://github.com/your_username/digitalRA.git
 2. Navigate into the directory and install the necessary packages:
 ```bash
 cd digitalRA
+python -m venv env_digitalRA
+.\env_digitalRA\Scripts\activate
 pip install -r requirements.txt
 ```
+3. Read the licence of the Publish and Perish which is used under this app for search capabilities [licence](https://harzing.com/resources/publish-or-perish/end-user-license-agreement)
+4. Download the [publish and perish CLI tool](https://harzing.com/resources/publish-or-perish/command-line) and put the unzip files (there are three exe files) in the assets folder.
+5. Run the CLI tool```pythong.exe main.py```
+6. You can also try the jupyter notebook for tests
 
 ## 🙌 Contributing
 

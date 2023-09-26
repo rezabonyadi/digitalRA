@@ -47,25 +47,30 @@ def main():
     if not os.path.exists(working_dir):
         os.makedirs(working_dir)
 
-    small_mdl = multi_choice("Please select a model for short context:", ['gpt-3.5-turbo-0613', 'gpt-3.5-turbo-16k'])
-    large_mdl = multi_choice("Please select a model for long context:", ['gpt-3.5-turbo-16k', 'gpt-4-0613'])
-
-    idea_text = input("Digital RA> Please insert a paragraph describing your idea: ")
-
+    small_mdl = multi_choice("Please select a brain for short context tasks:", ['gpt-3.5-turbo-0613', 'gpt-3.5-turbo-16k'])
+    large_mdl = multi_choice("Please select a brain for long context tasks:", ['gpt-3.5-turbo-16k', 'gpt-4-0613'])
     short_context_model, long_context_model = utils.get_llm_models(small_mdl, large_mdl)
     print('info> Loaded ' + small_mdl + ' for short context cases and ' + large_mdl + ' for long context inferences.')
 
-    ########### Create the researcher
-    print('########### Hiring your digital Research Assistant #########\n')
+    print('-------------- Hiring your digital Research Assistant\n')
+    idea_text = input("> Please insert a paragraph describing your idea: ")
     researcher_spec = utils.get_research_assistant(idea_text, short_context_model)
     print('Cost> your cost so far: ', short_context_model.get_current_cost())
-    print('--------------')
+    print('')
 
-    print('Digital RA> Extracting search phrases ...\n\n')
+    print("Digital RA> Hi, I am your research assistant. Here is what I am expert at:\n\n" + researcher_spec)
+
+    print('Do you want me to acquire other capability?')
+    extra = input("Please enter extra capabilities if you do, or just Enter if you are satisfied with my expertiese: ")
+    researcher_spec = researcher_spec + ' ' + extra + " You are the best in the world in this field. "
+    print('\n Digital RA> My capabilities: \n\n' + researcher_spec)
+
+    print('-------------- Extracts search phrases')
+    print('Digital RA> Extracting search phrases for your idea above ...\n')
 
     search_phrases = utils.extract_search_phrases(working_dir, idea_text, short_context_model, researcher_spec, num_search_phrases)
-    print('Digital RA> Here are search phrases I suggest: ', '\n'.join(search_phrases))
-    extra = input("Digital RA> Any other search phrase you want to add (seperate with ';'): ")
+    print('Digital RA> Here are search phrases I suggest: \n', '\n'.join(search_phrases))
+    extra = input("Digital RA> Any other search phrase you want to add (seperate with ';'). Hit Enter if you are happy with the search phrases above: ")
 
     if extra != '':
         for i in extra.split(';'):
@@ -76,15 +81,27 @@ def main():
 
     print('Digital RA> The final search phrases are: ', search_phrases)    
     print('Digital RA> your cost so far: ', short_context_model.get_current_cost())
-    print('--------------')
-
+    print('Digital RA> you can go to '+working_dir+' and change the file search_phrases.txt if you want to change the phrases further.')
+    
+    print('-------------- Preparing the idea')
     print('Digital RA> Let me summarize your research idea ...\n\n')
 
-    idea_text_summary = utils.get_curated_summary(working_dir, idea_text, short_context_model, researcher_spec)
+    idea_text_summary = utils.get_idea_summary(idea_text, short_context_model, researcher_spec)
+    print('Digital RA> Here is a summary of your idea: \n', idea_text_summary)
+    extra = input("Digital RA> Is this a fair summary (if yes, press enter, if no, enter a new summary): ")
+
+    if extra != "":
+        idea_text_summary = extra
+    with open(working_dir + 'idea_summary.txt', 'w') as f:
+        f.write('Idea: \n\n')
+        f.write(idea_text)
+        f.write('\n\n idea summary:\n\n')
+        f.write(idea_text_summary)
+
     print('Digital RA> your cost so far: ', short_context_model.get_current_cost())
-    print('--------------')
-
-
+    print('Digital RA> you can go to '+working_dir+' and change the file idea_summary.txt if you want to change the summary further.')
+    
+    print('-------------- Finding papers')
     print('Digital RA> Lets get some papers ...\n\n')
 
     engines = multi_choice("Digital RA> From which search engine do yo uwant me to get the papers: ", ['gscholar', 'pubmed', 'semscholar'])
@@ -95,19 +112,32 @@ def main():
     print(working_dir)
     
     papers_df = utils.get_research_papers(working_dir, search_phrases, engines=[engines], num_papers_by_eng=num_papers_by_eng)
+    papers_df.to_csv(working_dir+'papers_found.csv')
+
     print(f'Digital RA> Found  {papers_df.shape[0]} articles.')
     print('Digital RA> Let me go through these and rank them by relevance to our research idea')
 
     relevance_scores_df = utils.papers_relevances(working_dir, papers_df, researcher_spec, 
                                                         idea_text_summary, short_context_model)
-    print('--------------')
+    relevance_scores_df.to_csv(working_dir + '/first_level_analysis.csv')
+    print('')
+    print('Digital RA> I am ready with the papers now, also saved them in a file for you. These papers are going to be used for the litrature review I am writing.')            
+    print('Digital RA> you can go to '+working_dir+' and change the file first_level_analysis.txt if you want to change the papers or add/remove.')
+    input('Hit Enter to continue')
 
-    print('Digital RA> I am ready with the papers now, also saved. ')            
-    print(f'Digital RA> I am now filtering the papers by {min_cite} and year of publications of {min_year} for the review')
+    print('-------------- Filtering papers to prepare for the review ')
+    
+    print(f'Digital RA> I am now filtering the papers by {min_cite} min number of citations OR year of publications of {min_year} on-wards for the review')
 
     papers_df, concated_data = utils.filter_papers_for_review(min_year, min_cite, working_dir, 
                                                               long_context_model, relevance_scores_df)
+    
+    with open(working_dir + 'used_papers_review.txt', 'w', encoding="utf-8-sig") as f:
+        f.write(concated_data)
+    print('Digital RA> you can go to '+working_dir+' and change the file used_papers_review.txt if you want to change the papers or add/remove.')
+
     estimated_cost = long_context_model.get_estimated_cost(concated_data, litrature_review_len)
+
     print(f'Digital RA> Estimated cost for litrature review: {estimated_cost} to write a review of around {litrature_review_len*3/4} words')
 
     extra = input("Digital RA> are you ok with the cost (Y/n): ")
@@ -119,7 +149,6 @@ def main():
 
     print(f'Digital RA> Total cost: {long_context_model.get_current_cost()+short_context_model.get_current_cost()}')
     print('--------------')
-
 
     extra = input("Digital RA> Do you want to chat with the condensed data used for review (Y/n): ")
     if extra.lower() == 'n':
