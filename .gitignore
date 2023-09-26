@@ -5,3 +5,4 @@ assets/*.exe
 settings.json
 output.json
 app.py
+output.json
