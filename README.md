@@ -4,12 +4,11 @@ A Digital Research Assistant to Simplify Literature Reviews.
 ---
 Here is a very simple example (after running, see step-by-step run at the end of this page):
 
-![gif-short-optimize](https://github.com/rezabonyadi/digitalRA/assets/25924343/b82b4bf5-bedc-46db-b3dd-a00ad00ba30e)
-
+![Alt text](image.png)
 
 For researchers!
 
-Provide a paragraph describing an idea, the Digital RA is composed for you with the right skills (overridable by you), performs a paper search for you, estimates the relevance between papers and your idea, picks a subset, and writes a small section of Literature Review for your review and final inclusion in your grant or paper.
+Provide a paragraph describing an idea, the Digital RA is "hired" for you with the right skills (overridable by you), performs a paper search for you, estimates the relevance between papers and your idea, picks a subset, and writes a small section of Literature Review for your review and final inclusion in your grant or paper.
 
 MORE: You can chat with the RA about the papers, your ideas, how are they connected, and more.
 
@@ -50,7 +49,8 @@ pip install -r requirements.txt
 ```
 3. Read the licence of the Publish and Perish which is used under this app for search capabilities [licence](https://harzing.com/resources/publish-or-perish/end-user-license-agreement)
 4. Download the [publish and perish CLI tool](https://harzing.com/resources/publish-or-perish/command-line) and put the unzip files (there are three exe files) in the assets folder.
-5. Run the CLI tool ```pythong.exe main.py```. The first time you will be promoted to provide you OpenAI key.
+5. Run the streamlit app ```streamlit run app.py```. Provide your API key in the app.
+6. OR: Run the CLI tool ```pythong.exe main.py```. The first time you will be promoted to provide you OpenAI key.
 6. You can also try the jupyter notebook for tests
 
 ## Example litrature review:
