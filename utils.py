@@ -67,12 +67,14 @@ class llmOperations:
         openai.api_key = OPENAI_API_KEY
 
     
-    def get_llm_response(self, prompt, system_prompt = "You are a smart, very knowledgable, research assistant."):
+    def get_llm_response(self, prompt, system_prompt = "You are a smart, very knowledgable, research assistant.", assistant = None):
         chat_data = [{'role': 'system', "content": system_prompt}, {'role': 'user', 'content': prompt}]
-        # print(chat_data)
+        if assistant is not None:
+            chat_data.append({'role': 'assistant', 'content': assistant})
         
         try:
             response = openai.ChatCompletion.create(model=self.language_model, messages=chat_data)
+            # print(response)
 
             final_response = response['choices'][0]['message']['content']
         
@@ -117,11 +119,30 @@ def papers_relevances(working_dir, clean_df, researcher_spec, idea_text_summary,
     for i in tqdm(range(clean_df.shape[0])):
         abstract = clean_df['abstract'].values[i]
         
-        prompt = researcher_spec + '\n\nHere is an idea: ' + idea_text_summary + '\n' + "How relevant this idea is to the following abstract of a paper:\n" + abstract + """\n \nPick the relevance score from very low, low, medium, high, and very high. Output format as json, with fields "relevance" and "reason", which would look like:\n
-        {"relevance": "RELEVANCE", "reason": "THE REASON"}. Include nothing but this json format output in your response."""
+        prompt = f"""Here is an idea:  
+        
+        {idea_text_summary}
+        
+        END OF IDEA
 
-        parsed_response, response = short_context_model.get_llm_response(prompt)
+        How relevant this idea is to the following abstract of a paper: 
 
+        {abstract} 
+        
+        END OF ABSTRACT
+
+        Pick the relevance score is either "very low", "low", "medium", "high", or "very high". 
+        You always output as JSON, with fields "relevance" and "reason", which would look like:
+
+        {{"relevance": "RELEVANCE", "reason": "THE REASON"}} 
+        
+        Include nothing but this json format output in your response."""
+
+        assistant_message = "Ok, I will follow your instrcution EXACTLY and provide the response in JSON format mentioned."
+
+        # print(researcher_spec)
+        parsed_response, response = short_context_model.get_llm_response(prompt, system_prompt=researcher_spec, assistant=assistant_message)
+        
         try:
             parsed_data = json.loads(parsed_response)
         except:
@@ -161,9 +182,9 @@ def get_llm_models(small_mdl, large_mdl):
     return short_context_model, long_context_model
 
 def get_research_assistant(idea_text, short_context_model):
-    prompt = "Here is a research proposal:\n"+idea_text+'\n If a professor is going to research this propsoal, what would the professor be expert at? Generate the answer in the format of "You are an expeert in the field of XXX"'
+    prompt = "Here is a research proposal:\n"+idea_text+'\n If a professor is going to research this propsoal, what would the professor be expert at? List 3-5 main competencies needed to be world-class successful in this research. Format it as: Generate the answer in the format of "You are an expeert in the field of XXX, with following competencies: "'
     researcher_spec, response = short_context_model.get_llm_response(prompt)
-    
+
     if response is None:
         print('ATTENTION: OpenAI response error!!!')
         researcher_spec = "You are an expert researcher in all fields."
@@ -205,13 +226,12 @@ def write_litrature_review(working_dir, long_context_model, researcher_spec, ide
     print('your cost so far: ', long_context_model.get_current_cost())
 
     refs = [''.join(['[', str(i), '], ', p]) for i, p in enumerate((papers_df['title']+ ', (' + papers_df['year'].astype(str) + ')\n').values.tolist())]
+    all_ref = ''.join(refs)
+    litrature_review = ''.join([litrature_review, '\n\nReferences:\n', all_ref])
     print(litrature_review)
-    print(''.join(refs))
 
     with open(working_dir + 'litrature_review_final.txt', 'w', encoding="utf-8-sig") as f:
         f.write(litrature_review)
-        f.write('\n\nReferences:\n')
-        f.write(''.join(refs))
     
     return litrature_review
 
