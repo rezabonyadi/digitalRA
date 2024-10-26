@@ -4,6 +4,8 @@ A Digital Research Assistant to Simplify Literature Reviews.
 ---
 Here is a very simple example (after running, see step-by-step run at the end of this page):
 
+Here is a video example: [YouTube](https://youtu.be/asFIVAIotjw)
+
 ![Alt text](image.png)
 
 For researchers!
