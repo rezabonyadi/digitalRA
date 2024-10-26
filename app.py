@@ -9,7 +9,8 @@ import pandas as pd
 import tiktoken
 import openai
 
-pricing_map = {'gpt-4': [0.03/1000, 0.06/1000], 'gpt-3.5-turbo': [0.001/1000, 0.002/1000]}
+pricing_map = {'gpt-4o': [2.5/1000000, 1.25/1000000], 'gpt-4o-mini': [.15/1000000, 0.075/1000000], 
+               'gpt-4': [0.03/1000, 0.06/1000], 'gpt-3.5-turbo': [0.001/1000, 0.002/1000]}
 ra_image = Image.open('assets/ra_1_image.jpg')
 user_logo = Image.open('assets/th.jpeg')
 
@@ -24,9 +25,9 @@ col2.header("""Digital Research Assistant""")
 st.divider()
 
 # Pick your samll GPT instance (used for research and extracting papers) and Large GPT instance (used for writing the litrature review)
-large_mdl = st.sidebar.selectbox("Select the long context model", ['gpt-3.5-turbo', 'gpt-4'])
-small_mdl = st.sidebar.selectbox("Select the short context model", ['gpt-3.5-turbo', 'gpt-4'])
-
+large_mdl = st.sidebar.selectbox("Select the long context model", ['gpt-4o', 'gpt-4o-mini', 'gpt-3.5-turbo', 'gpt-4'])
+small_mdl = st.sidebar.selectbox("Select the short context model", ['gpt-4o-mini', 'gpt-4o', 'gpt-3.5-turbo', 'gpt-4'])
+chat_mdl = st.sidebar.selectbox("Select the chat model", ['gpt-4o', 'gpt-4o-mini', 'gpt-3.5-turbo', 'gpt-4'])
 # gen_char_tab, inteview_tab = st.tabs(["Generate character", "Interview"])
 # tabs = ["Hire", "Prepare", "Research", "Write", "Chat"]
 
@@ -66,7 +67,7 @@ if st.sidebar.button('Renew connection'):
     # long_context_model = llmOperations('gpt-3.5-turbo-16k', price_inp=0.003/1000, price_out=0.004/1000)
     st.session_state['long_context_model'] = utils.llmOperations(OPENAI_API_KEY, large_mdl, price_inp=pricing_map[large_mdl][0], 
                                                                  price_out=pricing_map[large_mdl][1])
-    st.session_state['chat_model'] = utils.llmOperations(OPENAI_API_KEY, 'gpt-3.5-turbo-16k', price_inp=pricing_map[small_mdl][0], 
+    st.session_state['chat_model'] = utils.llmOperations(OPENAI_API_KEY, chat_mdl, price_inp=pricing_map[small_mdl][0], 
                                                                  price_out=pricing_map[small_mdl][1])
     
 
@@ -81,7 +82,7 @@ if 'short_context_model' not in st.session_state:
     st.session_state['short_context_model'] = utils.llmOperations(OPENAI_API_KEY, small_mdl, price_inp=pricing_map[small_mdl][0], price_out=pricing_map[small_mdl][1])
     # long_context_model = llmOperations('gpt-3.5-turbo-16k', price_inp=0.003/1000, price_out=0.004/1000)
     st.session_state['long_context_model'] = utils.llmOperations(OPENAI_API_KEY, large_mdl, price_inp=pricing_map[large_mdl][0], price_out=pricing_map[large_mdl][1])
-    st.session_state['chat_model'] = utils.llmOperations(OPENAI_API_KEY, 'gpt-3.5-turbo-16k', price_inp=pricing_map[small_mdl][0], 
+    st.session_state['chat_model'] = utils.llmOperations(OPENAI_API_KEY, chat_mdl, price_inp=pricing_map[small_mdl][0], 
                                                                  price_out=pricing_map[small_mdl][1])
 
 if 'idea_text' not in st.session_state:
@@ -248,7 +249,6 @@ Instruction:
         st.success(f'Selected {papers_df.shape[0]} papers for the review.')
         st.data_editor(papers_df)
 
-
 if tabs == 'Write':
     st.markdown("""Here, the RA is going to write the litrature review for you based on the papers selected in the previous step. 
 1. Pay attention to the RA message on the estimated cost. 
@@ -331,7 +331,7 @@ if tabs == 'Chat':
             st.markdown(user_input)           
         
         request_data = {"messages": st.session_state.chat_history}
-        response = openai.ChatCompletion.create(model='gpt-3.5-turbo-16k', messages=st.session_state.chat_history)
+        response = openai.ChatCompletion.create(model=chat_mdl, messages=st.session_state.chat_history)
 
         chatbot_reply = response['choices'][0]['message']['content']
 
