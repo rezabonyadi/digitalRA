@@ -2,7 +2,7 @@ import datetime
 import json 
 from PIL import Image
 import os
-import utils
+import utils.operations as operations
 import argparse
 
 def multi_choice(prompt, available_choices):
@@ -49,12 +49,12 @@ def main():
 
     small_mdl = multi_choice("Please select a brain for short context tasks:", ['gpt-3.5-turbo-0613', 'gpt-3.5-turbo-16k'])
     large_mdl = multi_choice("Please select a brain for long context tasks:", ['gpt-3.5-turbo-16k', 'gpt-4-0613'])
-    short_context_model, long_context_model = utils.get_llm_models(small_mdl, large_mdl)
+    short_context_model, long_context_model = operations.get_llm_models(small_mdl, large_mdl)
     print('info> Loaded ' + small_mdl + ' for short context cases and ' + large_mdl + ' for long context inferences.')
 
     print('-------------- Hiring your digital Research Assistant\n')
     idea_text = input("> Please insert a paragraph describing your idea: ")
-    researcher_spec = utils.get_research_assistant(idea_text, short_context_model)
+    researcher_spec = operations.get_research_assistant(idea_text, short_context_model)
     print('Cost> your cost so far: ', short_context_model.get_current_cost())
     print('')
 
@@ -68,7 +68,7 @@ def main():
     print('-------------- Extracts search phrases')
     print('Digital RA> Extracting search phrases for your idea above ...\n')
 
-    search_phrases = utils.extract_search_phrases(working_dir, idea_text, short_context_model, researcher_spec, num_search_phrases)
+    search_phrases = operations.extract_search_phrases(working_dir, idea_text, short_context_model, researcher_spec, num_search_phrases)
     # print(search_phrases)
     print('Digital RA> Here are search phrases I suggest: \n', '\n'.join(search_phrases))
     extra = input("Digital RA> Any other search phrase you want to add (seperate with ';'). Hit Enter if you are happy with the search phrases above: ")
@@ -87,7 +87,7 @@ def main():
     print('-------------- Preparing the idea')
     print('Digital RA> Let me summarize your research idea ...\n\n')
 
-    idea_text_summary = utils.get_idea_summary(idea_text, short_context_model, researcher_spec)
+    idea_text_summary = operations.get_idea_summary(idea_text, short_context_model, researcher_spec)
     print('Digital RA> Here is a summary of your idea: \n', idea_text_summary)
     extra = input("Digital RA> Is this a fair summary (if yes, press enter, if no, enter a new summary): ")
 
@@ -112,13 +112,13 @@ def main():
     print(search_phrases)
     print(working_dir)
     
-    papers_df = utils.get_research_papers(working_dir, search_phrases, engines=[engines], num_papers_by_eng=num_papers_by_eng)
+    papers_df = operations.get_research_papers(working_dir, search_phrases, engines=[engines], num_papers_by_eng=num_papers_by_eng)
     papers_df.to_csv(working_dir+'papers_found.csv')
 
     print(f'Digital RA> Found  {papers_df.shape[0]} articles.')
     print('Digital RA> Let me go through these and rank them by relevance to our research idea')
 
-    relevance_scores_df = utils.papers_relevances(working_dir, papers_df, researcher_spec, 
+    relevance_scores_df = operations.papers_relevances(working_dir, papers_df, researcher_spec, 
                                                         idea_text_summary, short_context_model)
     relevance_scores_df.to_csv(working_dir + '/first_level_analysis.csv')
     print('')
@@ -130,7 +130,7 @@ def main():
     
     print(f'Digital RA> I am now filtering the papers by {min_cite} min number of citations OR year of publications of {min_year} on-wards for the review')
 
-    papers_df, concated_data = utils.filter_papers_for_review(min_year, min_cite, working_dir, 
+    papers_df, concated_data = operations.filter_papers_for_review(min_year, min_cite, working_dir, 
                                                               long_context_model, relevance_scores_df)
     
     with open(working_dir + 'used_papers_review.txt', 'w', encoding="utf-8-sig") as f:
@@ -146,7 +146,7 @@ def main():
         pass
 
     # Write the litrature review
-    litrature_review = utils.write_litrature_review(working_dir, long_context_model, researcher_spec, idea_text_summary, papers_df, concated_data)
+    litrature_review = operations.write_litrature_review(working_dir, long_context_model, researcher_spec, idea_text_summary, papers_df, concated_data)
 
     print(f'Digital RA> Total cost: {long_context_model.get_current_cost()+short_context_model.get_current_cost()}')
     print('--------------')
@@ -155,7 +155,7 @@ def main():
     if extra.lower() == 'n':
         pass
 
-    utils.enable_chat(researcher_spec, concated_data, idea_text_summary, long_context_model.get_current_cost()+short_context_model.get_current_cost())
+    operations.enable_chat(researcher_spec, concated_data, idea_text_summary, long_context_model.get_current_cost()+short_context_model.get_current_cost())
 
 if __name__ == "__main__":    
     main()

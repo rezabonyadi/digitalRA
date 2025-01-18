@@ -8,94 +8,13 @@ import time
 import tiktoken
 import pandas as pd
 from tqdm import tqdm
+import requests
+# from utils import llmOperations
+from utils import papers_interactions
+from utils import prompts
+from utils import llm_connection
 
-pricing_map = {'gpt-4-0613': [0.03/1000, 0.06/1000], 'gpt-3.5-turbo-16k': [0.003/1000, 0.004/1000], 'gpt-3.5-turbo-0613': [0.0015/1000, 0.002/1000]}
-
-def run_pop8query(keywords, datasource, max_results, output_format, output_file):
-    cmd = [
-        "./assets/pop8query",
-        "--keywords={}".format(keywords),
-        "--{}".format(datasource),
-        "--max={}".format(max_results),
-        "--format={}".format(output_format),
-        output_file
-    ]
-
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    
-    if result.returncode != 0:
-        print("Error occurred:", result.stderr)
-    else:
-        print("Command executed successfully!")
-        print("Output:", result.stdout)
-
-def get_papers(search_phrase, dataset="semscholar", max_papers=5):
-    try:
-        run_pop8query(search_phrase, dataset, max_papers, "json", "output.json")
-        
-        # Check if output.json was created and is not empty
-        if not os.path.exists("output.json") or os.path.getsize("output.json") == 0:
-            print(f"Error: Output file for '{search_phrase}' not created or is empty.")
-            return pd.DataFrame()  # Return empty dataframe
-
-        with open("output.json", "r", encoding="utf-8-sig") as file:
-            data = json.load(file)
-
-        if not data:
-            print(f"No data found in the JSON file for '{search_phrase}'.")
-            return pd.DataFrame()  # Return empty dataframe
-
-        df = pd.DataFrame(data)
-
-        return df
-
-    except Exception as e:
-        print(f"Error processing '{search_phrase}': {e}")
-        return pd.DataFrame()  # Return empty dataframe in case of any other unexpected errors
-
-
-class llmOperations:    
-    total_prompt_tokens = 0
-    total_cmpl_tokens = 0
-
-    openai.api_key = 'XXX'
-    def __init__(self, OPENAI_API_KEY, language_model="gpt-3.5-turbo-0613", price_inp=0.0015/1000, price_out=0.002/1000):
-        self.language_model=language_model
-        self.price_inp=price_inp
-        self.price_out=price_out    
-        self.tokenizer = tiktoken.encoding_for_model("gpt-3.5-turbo")
-        openai.api_key = OPENAI_API_KEY
-
-    
-    def get_llm_response(self, prompt, system_prompt = "You are a smart, very knowledgable, research assistant.", assistant = None):
-        chat_data = [{'role': 'system', "content": system_prompt}, {'role': 'user', 'content': prompt}]
-        if assistant is not None:
-            chat_data.append({'role': 'assistant', 'content': assistant})
-        # print(prompt)
-        try:
-            response = openai.ChatCompletion.create(model=self.language_model, messages=chat_data)
-            # print(chat_data)
-            # print(response)
-
-            final_response = response['choices'][0]['message']['content']
-        
-            self.total_prompt_tokens += response['usage']['prompt_tokens']
-            self.total_cmpl_tokens += response['usage']['completion_tokens']
-        except:
-            final_response = ""
-            response = None
-
-        # print(self.get_current_cost())
-        
-        return final_response, response
-
-    def get_current_cost(self):
-        return self.total_prompt_tokens*self.price_inp + self.total_cmpl_tokens*self.price_out
-        
-    def get_estimated_cost(self, prompt, completion_estimate_len=100):
-        # Assumes the system prompt is small, and prompt variable contains all text to be processed by LLM        
-        return len(self.tokenizer.encode(prompt))*self.price_inp + completion_estimate_len*self.price_out
-
+pricing_map = llm_connection.pricing_map
 
 def get_research_papers(working_dir, search_phrases, engines = ['gscholar', 'pubmed', 'semscholar'], num_papers_by_eng=20):
     combined_df = pd.DataFrame()
@@ -105,7 +24,7 @@ def get_research_papers(working_dir, search_phrases, engines = ['gscholar', 'pub
     for search_phrase in search_phrases:
         for engine in engines:
             print(f"Extracting papers with search phrase: {search_phrase} from {engine}")
-            df = get_papers(search_phrase, engine, num_papers_by_eng)
+            df = papers_interactions.get_papers(search_phrase, engine, num_papers_by_eng)
             combined_df = pd.concat([combined_df, df])
             time.sleep(1)    
     combined_df = combined_df.drop_duplicates(subset=['abstract'])
@@ -120,31 +39,14 @@ def papers_relevances(working_dir, clean_df, researcher_spec, idea_text_summary,
     for i in tqdm(range(clean_df.shape[0])):
         abstract = clean_df['abstract'].values[i]
         
-        prompt = f"""Here is an idea:  
-        
-        {idea_text_summary}
-        
-        END OF IDEA
-
-        How relevant this idea is to the following abstract of a paper: 
-
-        {abstract} 
-        
-        END OF ABSTRACT
-
-        Pick the relevance score is either "very low", "low", "medium", "high", or "very high". 
-        You always output as JSON, with fields "relevance" and "reason", which would look like:
-
-        {{"relevance": "RELEVANCE", "reason": "THE REASON"}} 
-        
-        Include nothing but this json format output in your response."""
-
-        assistant_message = "Ok, I will follow your instrcution EXACTLY and provide the response in JSON format mentioned."
-
-        # print(researcher_spec)
-        parsed_response, response = short_context_model.get_llm_response(prompt, system_prompt=researcher_spec, assistant=assistant_message)
+        # assistant_message = "Ok, I will follow your instrcution EXACTLY and provide the response in JSON format mentioned."
+        prompt = prompts.get_papers_relevance_prompt(idea_text_summary, abstract)
+        # print(prompt)
+        parsed_response, response = short_context_model.get_llm_response(prompt, system_prompt=researcher_spec)
         
         try:
+            parsed_response = parsed_response.replace("```json\n", "").replace("```", "")
+            # print(parsed_response)
             parsed_data = json.loads(parsed_response)
         except:
             parsed_data = {"relevance": "unknown", "reason": parsed_response}
@@ -161,26 +63,6 @@ def papers_relevances(working_dir, clean_df, researcher_spec, idea_text_summary,
     relevance_scores_df = pd.DataFrame(relevance_scores)
     
     return relevance_scores_df
-
-def get_llm_models(small_mdl, large_mdl):
-    OPENAI_API_KEY = "XXX"
-
-    if not os.path.exists('settings.json'):
-        OPENAI_API_KEY = input("Please enter your OPENAI Key: ")
-
-        data = {"OPENAI_API_KEY": OPENAI_API_KEY}
-        with open('settings.json', 'w') as f:
-            json.dump(data, f, indent=4) 
-
-    with open('settings.json', 'r') as file:
-        data = json.load(file)
-        field_name = "OPENAI_API_KEY"
-        OPENAI_API_KEY = data[field_name]
-
-    short_context_model = llmOperations(OPENAI_API_KEY, small_mdl, price_inp=pricing_map[small_mdl][0], price_out=pricing_map[small_mdl][1])
-    long_context_model = llmOperations(OPENAI_API_KEY, large_mdl, price_inp=pricing_map[large_mdl][0], price_out=pricing_map[large_mdl][1])
-
-    return short_context_model, long_context_model
 
 def get_research_assistant(idea_text, short_context_model):
     prompt = "Here is a research proposal:\n"+idea_text+'\n If a professor is going to research this propsoal, what would the professor be expert at? List 3-5 main competencies needed to be world-class successful in this research. Format it as: Generate the answer in the format of "You are an expeert in the field of XXX, with following competencies: "'

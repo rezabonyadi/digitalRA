@@ -4,3 +4,4 @@ openai
 pandas
 numpy
 tiktoken
+arxiv
