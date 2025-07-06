@@ -1,8 +1,13 @@
-
 import streamlit as st
 from utils import operations
 
-def load_prepare_ra_page():
+'''This page uses LLM to prepare your Research Assistant. This includes: 
+1. Generating a summary of your research idea
+2. Generating search phrases for your research proposal
+    '''
+    
+def load_prepare_ra_page(llm_object=None):
+    
     st.markdown("""# Prepare your Research Assistant""")
     st.markdown("""Here, you will prepare your RA for the research to be done. The RA needs to perform internet search. To do so, it will generate some search phrases. 
 5. Click on "Research" once ready.""")
@@ -18,7 +23,7 @@ You can revise the summary.
 
     if button_generate_summary:
 
-        idea_text_summary = operations.get_idea_summary(st.session_state['idea_text'], st.session_state['short_context_model'], 
+        idea_text_summary = operations.get_idea_summary(st.session_state['idea_text'], llm_object, 
                                                 st.session_state['researcher_spec'] )
         print('Digital RA> Here is a summary of your idea: \n', idea_text_summary)
 
@@ -28,7 +33,7 @@ You can revise the summary.
             f.write('\n\n idea summary:\n\n')
             f.write(idea_text_summary)
 
-        st.toast('Digital RA> your cost so far: ' + str(st.session_state['short_context_model'].get_current_cost()))
+        st.toast('Digital RA> your cost so far: ' + str(llm_object.get_current_cost()))
         st.toast('Digital RA> Saved the results to '+st.session_state['working_dir']+'/file idea_summary.txt.')
         st.session_state['research_summary'] = idea_text_summary
 
@@ -48,8 +53,8 @@ Click on "Research" on the left menue once ready.
 
     if button_generate_search_phrases:
         researcher_spec = st.session_state['researcher_spec'] 
-        
-        search_phrases = operations.extract_search_phrases(st.session_state['working_dir'], st.session_state['idea_text'], st.session_state['short_context_model'], 
+
+        search_phrases = operations.extract_search_phrases(st.session_state['working_dir'], st.session_state['idea_text'], llm_object,
                                                       researcher_spec, number_serach_phrases)
 
         print('Here are search phrases I suggest: ', search_phrases)
@@ -57,7 +62,7 @@ Click on "Research" on the left menue once ready.
 
         with open(st.session_state['working_dir'] + 'search_phrases.txt', 'w') as f:
             f.write('\n'.join(search_phrases))
-        st.toast('Digital RA> your cost so far: '+ str(st.session_state['short_context_model'].get_current_cost()))
+        st.toast('Digital RA> your cost so far: '+ str(llm_object.get_current_cost()))
         st.toast('Digital RA> Saved the results to '+st.session_state['working_dir']+'/file search_phrases.txt.')
 
     search_phrases = st.text_area('Here are my suggested search phrases:', '\n'.join(st.session_state['search_phrases']))

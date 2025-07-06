@@ -5,3 +5,4 @@ pandas
 numpy
 tiktoken
 arxiv
+google-genai

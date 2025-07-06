@@ -120,7 +120,7 @@ def write_litrature_review(working_dir, long_context_model, researcher_spec, ide
     
     return litrature_review
 
-def filter_papers_for_review(min_year, min_cite, working_dir, long_context_model, relevance_scores_df):
+def filter_papers_for_review(min_year, min_cite, working_dir, relevance_scores_df):
     filtered_df = relevance_scores_df[relevance_scores_df["relevance"].str.lower().isin(["high", "very high"])]
     papers_df = filtered_df[(filtered_df['year']>min_year) | (filtered_df['cites']>min_cite)]
     print(f'Selected {papers_df.shape[0]} papers for the review.')

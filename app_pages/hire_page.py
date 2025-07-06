@@ -1,8 +1,11 @@
 
 import streamlit as st
-from utils import operations
+from utils import llm_connection, operations
+'''This page is used to hire a research assistant (RA) for the research proposal.
+It uses LLM to generate the RAs competencies based on the research proposal based on your idea description.'''
 
-def load_hire_page():
+def load_hire_page(llm_object=None):
+    
     st.markdown("""# Hire your Research Assistant""")
     st.markdown("""Hello there!
                 
@@ -21,9 +24,8 @@ I will "hire" a research assistant for you with expertiese you will need to make
     button_generate_RA_character = st.button('Hire your RA')
     if button_generate_RA_character:
         
-        print(st.session_state['idea_text'])
-        researcher_spec = operations.get_research_assistant(st.session_state['idea_text'], st.session_state['short_context_model'])
-        st.toast('Cost> your cost so far: ' + str(st.session_state['short_context_model'].get_current_cost()))
+        researcher_spec = operations.get_research_assistant(st.session_state['idea_text'], llm_object)
+        st.toast('Cost> your cost so far: ' + str(llm_object.get_current_cost()))
         
         st.session_state['researcher_spec'] = researcher_spec
     st.divider()

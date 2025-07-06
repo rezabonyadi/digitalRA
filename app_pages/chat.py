@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 import tiktoken
 
-def load_chat_page(user_logo, ra_image, chat_mdl):
+def load_chat_page(user_logo, ra_image, llm_object=None):
     st.markdown("""# Chat with your Research Assistant""")
     st.markdown("""Hello there!
 Your RA has read through lots of articles and is ready for you to chat with.
@@ -10,10 +10,9 @@ Your RA has read through lots of articles and is ready for you to chat with.
     researcher_spec = st.session_state['researcher_spec']
     concated_data = st.session_state['concated_data'] 
     idea_text_summary = st.session_state['research_summary']
-
-    if "chat_history" not in st.session_state:
-        chat_data = [{'role': 'system', "content": 
-                    f"""{researcher_spec} 
+    client = llm_object
+    # print("Chat model: ", chat_mdl)
+    system_prompt = f"""{researcher_spec} 
                     
                     You are my research assistant. 
                     
@@ -21,12 +20,15 @@ Your RA has read through lots of articles and is ready for you to chat with.
                     
                     {concated_data} 
                     
-                    Here is an idea I have I want to research on: {idea_text_summary}"""}]
+                    Here is an idea I have I want to research on: {idea_text_summary}"""
+
+    if "chat_history" not in st.session_state:        
+        chat_data = [{'role': 'system', "content": system_prompt}]
         
         st.session_state.chat_history = chat_data
     
     cost = 0
-    tokenizer = tiktoken.encoding_for_model("gpt-3.5-turbo")
+    tokenizer = tiktoken.encoding_for_model("gpt-4o")
     
     user_input = st.chat_input("Digital assistant")
     # Redraw chat history with the new messages (in reverse order)
@@ -48,9 +50,13 @@ Your RA has read through lots of articles and is ready for you to chat with.
             st.markdown(user_input)           
         
         request_data = {"messages": st.session_state.chat_history}
-        response = openai.ChatCompletion.create(model=chat_mdl, messages=st.session_state.chat_history)
+        response_text, _ = client.get_llm_response(user_input, system_prompt=system_prompt)
+        # response = client.responses.create(model=chat_mdl, 
+        #                                    input=st.session_state.chat_history)
+        print("Response: ", response_text)
 
-        chatbot_reply = response['choices'][0]['message']['content']
+        chatbot_reply = response_text
+        # cost += response.usage.input_tokens * st.session_state['chat_model'].price_inp
 
         with st.chat_message("assistant", avatar=ra_image):
             st.markdown(chatbot_reply)              

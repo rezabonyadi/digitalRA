@@ -1,9 +1,11 @@
-
 import streamlit as st
 import pandas as pd
 from utils import operations
 
-def load_research_page():
+def load_research_page(llm_object=None):
+    '''This page is used to perform the research on the scientific databases.
+    It gets the papers from various sources, and then uses LLM to evaluate their relevance, and filter them for the literature review.
+    '''
     
     ########## Get papers
     st.markdown("## Get papers")
@@ -52,10 +54,8 @@ Instruction:
                                                                                papers_to_evaluate, 
                                                                                st.session_state['researcher_spec'],  
                                                                                st.session_state['research_summary'], 
-                                                                               st.session_state['short_context_model'])
+                                                                               llm_object)
             
-            st.toast("Current total cost: " + str(st.session_state['short_context_model'].get_current_cost()+
-                                                        st.session_state['long_context_model'].get_current_cost()))
             st.session_state['relevance_scores_df'].to_csv(st.session_state['working_dir'] + '/first_level_analysis.csv')
             st.toast('Digital RA> I am ready with the papers now, also saved them in a file for you. These papers are going to be used for the litrature review I am writing.')            
             st.toast('Digital RA> Saved the results to '+st.session_state['working_dir']+'/first_level_analysis.txt.')
@@ -78,7 +78,7 @@ Instruction:
         # relevance_scores_df = st.session_state['relevance_scores_df']
 
         filtered_papers_df, concated_data = operations.filter_papers_for_review(min_year, min_cite, st.session_state['working_dir'], 
-                                                                st.session_state['long_context_model'], relevance_scores_edited)
+                                                                relevance_scores_edited)
         
         with open(st.session_state['working_dir'] + 'used_papers_review.txt', 'w', encoding="utf-8-sig") as f:
             f.write(concated_data)
